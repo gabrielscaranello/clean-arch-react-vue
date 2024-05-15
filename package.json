@@ -15,6 +15,7 @@
     "prepare": "husky"
   },
   "devDependencies": {
+    "@faker-js/faker": "^8.4.1",
     "@ianvs/prettier-plugin-sort-imports": "^4.2.1",
     "@testing-library/jest-dom": "^6.4.5",
     "@testing-library/vue": "^8.0.3",
