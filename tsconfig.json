@@ -10,6 +10,6 @@
     "types": ["vitest/globals"],
     "lib": ["ES2020", "DOM", "DOM.Iterable"]
   },
-  "include": ["packages"],
+  "include": ["packages", "./*.mts"],
   "exclude": ["node_modules"]
 }

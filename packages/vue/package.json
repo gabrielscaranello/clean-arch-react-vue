@@ -4,7 +4,6 @@
   "description": "Front-end write in vue",
   "author": "Gabriel Scaranello <gabrieljscaranello@gmail.com>",
   "license": "MIT",
-  "main": "src/main.ts",
   "directories": {
     "lib": "src",
     "test": "__tests__"

@@ -5,7 +5,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '~core': resolve(__dirname, 'packages/core/src'),
-      '~vue': resolve(__dirname, 'packages/vue/src'),
+      '~vue': resolve(__dirname, 'packages/vue/src')
     }
   },
   test: {
@@ -16,11 +16,7 @@ export default defineConfig({
       cleanOnRerun: true,
       reporter: ['text', 'html-spa', 'lcov'],
       include: ['**/*.ts', '**/*.tsx', '**/*.vue'],
-      exclude: [
-        '**/*.{d,spec,config}.ts',
-        '**/index.ts',
-        '**/mocks/**/*.*',
-      ],
+      exclude: ['**/*.{d,spec,config}.ts', '**/index.ts', '**/mocks/**/*.*']
     }
   }
 })
