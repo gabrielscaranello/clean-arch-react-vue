@@ -8,7 +8,12 @@
     "sourceMap": true,
     "verbatimModuleSyntax": true,
     "types": ["vitest/globals"],
-    "lib": ["ES2020", "DOM", "DOM.Iterable"]
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "baseUrl": "./",
+    "paths": {
+      "~core/*": ["packages/core/src/*"],
+      "~vue/*": ["packages/vue/src/*"]
+    }
   },
   "include": ["packages", "./*.mts"],
   "exclude": ["node_modules"]
