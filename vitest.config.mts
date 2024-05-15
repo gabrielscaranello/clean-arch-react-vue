@@ -5,7 +5,8 @@ export default defineConfig({
   resolve: {
     alias: {
       '~core': resolve(__dirname, 'packages/core/src'),
-      '~vue': resolve(__dirname, 'packages/vue/src')
+      '~vue': resolve(__dirname, 'packages/vue/src'),
+      '~mocks': resolve(__dirname, 'tests/mocks')
     }
   },
   test: {

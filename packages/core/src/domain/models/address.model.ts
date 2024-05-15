@@ -1,5 +1,5 @@
 export interface Address {
-  zipcode: string
+  zipCode: string
   street: string
   number: string
   complement: string

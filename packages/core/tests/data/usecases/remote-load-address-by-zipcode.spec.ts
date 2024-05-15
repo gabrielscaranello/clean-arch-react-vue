@@ -1,5 +1,7 @@
 import { RemoteLoadAddressByZipcode } from '~core/data/usecases'
-import { Address, LoadAddressByZipcode } from '~core/domain'
+import { LoadAddressByZipcode } from '~core/domain'
+import { mockAddress, RemoteLoadAddressByZipcodeStub } from '~mocks/domain'
+import { faker } from '~mocks/faker'
 
 interface SutTypes {
   sut: RemoteLoadAddressByZipcode
@@ -7,20 +9,6 @@ interface SutTypes {
 }
 
 const makeSut = (): SutTypes => {
-  class RemoteLoadAddressByZipcodeStub implements LoadAddressByZipcode {
-    async load(): Promise<Address> {
-      return await Promise.resolve({
-        city: 'any_city',
-        state: 'any_state',
-        number: 'any_number',
-        street: 'any_street',
-        zipcode: 'any_zipcode',
-        complement: '',
-        neighborhood: ''
-      })
-    }
-  }
-
   const gatewayStub = new RemoteLoadAddressByZipcodeStub()
   const sut = new RemoteLoadAddressByZipcode(gatewayStub)
 
@@ -28,7 +16,7 @@ const makeSut = (): SutTypes => {
 }
 
 describe('data/usecases/remote-load-address-by-zipcode', () => {
-  const zipcode = 'any_zipcode'
+  const zipcode = faker.location.zipCode()
 
   it('should be call gateway with correct values', async () => {
     const { sut, gatewayStub } = makeSut()
@@ -40,22 +28,17 @@ describe('data/usecases/remote-load-address-by-zipcode', () => {
   })
 
   it('should return address on success', async () => {
-    const { sut } = makeSut()
+    const { sut, gatewayStub } = makeSut()
+    const mockedAddress = mockAddress()
+    vi.spyOn(gatewayStub, 'load').mockResolvedValueOnce(mockedAddress)
+
     const address = await sut.load(zipcode)
 
-    expect(address).toEqual({
-      city: 'any_city',
-      state: 'any_state',
-      number: 'any_number',
-      street: 'any_street',
-      zipcode: 'any_zipcode',
-      complement: '',
-      neighborhood: ''
-    })
+    expect(address).toEqual(mockedAddress)
   })
 
   it('should throw if gateway throws', async () => {
-    const error = new Error('any_error')
+    const error = new Error(faker.lorem.word())
     const { sut, gatewayStub } = makeSut()
     vi.spyOn(gatewayStub, 'load').mockRejectedValueOnce(error)
 

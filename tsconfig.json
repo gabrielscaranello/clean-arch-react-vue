@@ -11,9 +11,10 @@
     "baseUrl": "./",
     "paths": {
       "~core/*": ["packages/core/src/*"],
-      "~vue/*": ["packages/vue/src/*"]
+      "~vue/*": ["packages/vue/src/*"],
+      "~mocks/*": ["tests/mocks/*"]
     }
   },
-  "include": ["packages", "./*.mts"],
+  "include": ["packages", "tests", "./*.mts"],
   "exclude": ["node_modules"]
 }
