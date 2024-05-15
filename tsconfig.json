@@ -6,7 +6,6 @@
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true,
-    "verbatimModuleSyntax": true,
     "types": ["vitest/globals"],
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "baseUrl": "./",
