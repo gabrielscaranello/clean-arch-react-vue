@@ -1,0 +1,15 @@
+{
+  "name": "core",
+  "version": "0.0.0",
+  "description": "Core of application",
+  "author": "Gabriel Scaranello <gabrieljscaranello@gmail.com>",
+  "license": "MIT",
+  "main": "src/main.ts",
+  "directories": {
+    "lib": "src",
+    "test": "__tests__"
+  },
+  "files": [
+    "src"
+  ]
+}
