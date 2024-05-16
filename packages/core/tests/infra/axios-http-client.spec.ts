@@ -1,5 +1,5 @@
 import { HTTP_METHOD } from '~core/data/contracts'
-import { AxiosHttpClient } from '~core/infra/axios-http-client'
+import { AxiosHttpClient } from '~core/infra'
 import { mockHttpResponse } from '~mocks/data'
 import { mockAxios, mockHttpRequest } from '~mocks/infra'
 
