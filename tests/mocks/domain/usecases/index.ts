@@ -1,1 +1,1 @@
-export * from './lock-address-by-zipcode.stub'
+export * from './lock-address-by-zip-code.stub'

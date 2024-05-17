@@ -19,7 +19,7 @@ const makeSut = (): SutTypes => {
   return { sut, validationStub, gatewayStub }
 }
 
-describe('presentation/controllers/load-address-by-zipcode', () => {
+describe('presentation/controllers/load-address-by-zip-code', () => {
   const input: InputDto = { zipCode: faker.location.zipCode() }
 
   it('should call validation with correct value', async () => {

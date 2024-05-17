@@ -15,16 +15,16 @@ const makeSut = (): SutTypes => {
   return { sut, gatewayStub }
 }
 
-describe('data/usecases/remote-load-address-by-zipcode', () => {
-  const zipcode = faker.location.zipCode()
+describe('data/usecases/remote-load-address-by-zip-code', () => {
+  const zipCode = faker.location.zipCode()
 
   it('should be call gateway with correct values', async () => {
     const { sut, gatewayStub } = makeSut()
     const loadSpy = vi.spyOn(gatewayStub, 'load')
 
-    await sut.load(zipcode)
+    await sut.load(zipCode)
 
-    expect(loadSpy).toHaveBeenCalledWith(zipcode)
+    expect(loadSpy).toHaveBeenCalledWith(zipCode)
   })
 
   it('should return address on success', async () => {
@@ -32,7 +32,7 @@ describe('data/usecases/remote-load-address-by-zipcode', () => {
     const mockedAddress = mockAddress()
     vi.spyOn(gatewayStub, 'load').mockResolvedValueOnce(mockedAddress)
 
-    const address = await sut.load(zipcode)
+    const address = await sut.load(zipCode)
 
     expect(address).toEqual(mockedAddress)
   })
@@ -42,7 +42,7 @@ describe('data/usecases/remote-load-address-by-zipcode', () => {
     const { sut, gatewayStub } = makeSut()
     vi.spyOn(gatewayStub, 'load').mockRejectedValueOnce(error)
 
-    const promise = sut.load(zipcode)
+    const promise = sut.load(zipCode)
 
     await expect(promise).rejects.toThrow(error)
   })

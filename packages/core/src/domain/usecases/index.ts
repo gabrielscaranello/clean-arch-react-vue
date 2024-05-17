@@ -1,1 +1,1 @@
-export * from './load-address-by-zipcode'
+export * from './load-address-by-zip-code'
