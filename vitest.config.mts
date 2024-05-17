@@ -17,7 +17,13 @@ export default defineConfig({
       cleanOnRerun: true,
       reporter: ['text', 'html-spa', 'lcov'],
       include: ['**/*.ts', '**/*.tsx', '**/*.vue'],
-      exclude: ['**/*.{d,spec,config}.ts', '**/index.ts', '**/mocks/**/*.*']
+      exclude: [
+        '**/*.{d,spec,config}.ts',
+        '**/index.ts',
+        '**/mocks/**/*.*',
+        'packages/core/src/main/factories/**/*.*',
+        '!packages/core/src/main/factories/validation/**/*.*'
+      ]
     }
   }
 })
