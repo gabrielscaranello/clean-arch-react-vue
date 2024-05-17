@@ -1,3 +1,3 @@
-import { LoadAddressByZipcodeParams } from '~core/domain'
+import { LoadAddressByZipCodeParams } from '~core/domain'
 
-export interface RemoteLoadAddressByZipCodeControllerParams extends LoadAddressByZipcodeParams {}
+export interface RemoteLoadAddressByZipCodeControllerParams extends LoadAddressByZipCodeParams {}

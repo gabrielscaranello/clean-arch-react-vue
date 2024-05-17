@@ -1,20 +1,20 @@
-import { LoadAddressByZipcode } from '~core/domain'
+import { LoadAddressByZipCode } from '~core/domain'
 import { Validation } from '~core/presentation/contracts'
 import { RemoteLoadAddressByZipCodeController } from '~core/presentation/controllers'
 import { RemoteLoadAddressByZipCodeControllerParams } from '~core/presentation/controllers/contracts'
-import { LoadAddressByZipcodeStub } from '~mocks/domain'
+import { LoadAddressByZipCodeStub } from '~mocks/domain'
 import { faker } from '~mocks/faker'
 import { ValidationStub } from '~mocks/presentation'
 
 interface SutTypes {
   sut: RemoteLoadAddressByZipCodeController
   validationStub: Validation
-  gatewayStub: LoadAddressByZipcode
+  gatewayStub: LoadAddressByZipCode
 }
 
 const makeSut = (): SutTypes => {
   const validationStub = new ValidationStub()
-  const gatewayStub = new LoadAddressByZipcodeStub()
+  const gatewayStub = new LoadAddressByZipCodeStub()
   const sut = new RemoteLoadAddressByZipCodeController(gatewayStub, validationStub)
   return { sut, validationStub, gatewayStub }
 }

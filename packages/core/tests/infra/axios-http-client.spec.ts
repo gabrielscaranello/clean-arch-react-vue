@@ -15,7 +15,7 @@ const makeSut = (): SutTypes => {
   return { sut }
 }
 
-describe('AxiosHttpClient', () => {
+describe('infra/axios-http-client', () => {
   const mockedAxios = mockAxios()
   const requestSpy = vi.spyOn(mockedAxios, 'request')
 

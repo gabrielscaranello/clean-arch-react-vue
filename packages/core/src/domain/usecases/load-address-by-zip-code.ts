@@ -1,9 +1,9 @@
 import { Address } from '~core/domain/models'
 
-export interface LoadAddressByZipcodeParams {
+export interface LoadAddressByZipCodeParams {
   zipCode: string
 }
 
-export interface LoadAddressByZipcode {
-  load: (params: LoadAddressByZipcodeParams) => Promise<Address>
+export interface LoadAddressByZipCode {
+  load: (params: LoadAddressByZipCodeParams) => Promise<Address>
 }

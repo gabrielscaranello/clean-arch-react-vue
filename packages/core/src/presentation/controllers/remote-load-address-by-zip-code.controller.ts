@@ -1,11 +1,11 @@
-import { Address, LoadAddressByZipcode } from '~core/domain'
+import { Address, LoadAddressByZipCode } from '~core/domain'
 import { Validation } from '~core/presentation/contracts'
 
 import { RemoteLoadAddressByZipCodeControllerParams } from './contracts'
 
 export class RemoteLoadAddressByZipCodeController {
   constructor(
-    private readonly gateway: LoadAddressByZipcode,
+    private readonly gateway: LoadAddressByZipCode,
     private readonly validator: Validation
   ) {}
 

@@ -1,22 +1,22 @@
-import { RemoteLoadAddressByZipcode } from '~core/data/usecases'
-import { LoadAddressByZipcode, LoadAddressByZipcodeParams } from '~core/domain'
-import { LoadAddressByZipcodeStub, mockAddress } from '~mocks/domain'
+import { RemoteLoadAddressByZipCode } from '~core/data/usecases'
+import { LoadAddressByZipCode, LoadAddressByZipCodeParams } from '~core/domain'
+import { LoadAddressByZipCodeStub, mockAddress } from '~mocks/domain'
 import { faker } from '~mocks/faker'
 
 interface SutTypes {
-  sut: RemoteLoadAddressByZipcode
-  gatewayStub: LoadAddressByZipcode
+  sut: RemoteLoadAddressByZipCode
+  gatewayStub: LoadAddressByZipCode
 }
 
 const makeSut = (): SutTypes => {
-  const gatewayStub = new LoadAddressByZipcodeStub()
-  const sut = new RemoteLoadAddressByZipcode(gatewayStub)
+  const gatewayStub = new LoadAddressByZipCodeStub()
+  const sut = new RemoteLoadAddressByZipCode(gatewayStub)
 
   return { sut, gatewayStub }
 }
 
 describe('data/usecases/remote-load-address-by-zip-code', () => {
-  const params: LoadAddressByZipcodeParams = { zipCode: faker.location.zipCode() }
+  const params: LoadAddressByZipCodeParams = { zipCode: faker.location.zipCode() }
 
   it('should be call gateway with correct values', async () => {
     const { sut, gatewayStub } = makeSut()
