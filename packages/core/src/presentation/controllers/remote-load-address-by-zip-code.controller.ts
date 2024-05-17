@@ -1,9 +1,10 @@
 import { Address, LoadAddressByZipCode } from '~core/domain'
-import { Validation } from '~core/presentation/contracts'
+import { Controller, Validation } from '~core/presentation/contracts'
 
 import { RemoteLoadAddressByZipCodeControllerParams } from './contracts'
 
-export class RemoteLoadAddressByZipCodeController {
+export class RemoteLoadAddressByZipCodeController
+  implements Controller<RemoteLoadAddressByZipCodeControllerParams, Address> {
   constructor(
     private readonly gateway: LoadAddressByZipCode,
     private readonly validator: Validation
