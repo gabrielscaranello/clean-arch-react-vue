@@ -1,6 +1,6 @@
 import { RemoteLoadAddressByZipcode } from '~core/data/usecases'
 import { LoadAddressByZipcode } from '~core/domain'
-import { mockAddress, RemoteLoadAddressByZipcodeStub } from '~mocks/domain'
+import { LoadAddressByZipcodeStub, mockAddress } from '~mocks/domain'
 import { faker } from '~mocks/faker'
 
 interface SutTypes {
@@ -9,7 +9,7 @@ interface SutTypes {
 }
 
 const makeSut = (): SutTypes => {
-  const gatewayStub = new RemoteLoadAddressByZipcodeStub()
+  const gatewayStub = new LoadAddressByZipcodeStub()
   const sut = new RemoteLoadAddressByZipcode(gatewayStub)
 
   return { sut, gatewayStub }
