@@ -24,10 +24,10 @@ export interface HttpResponse<T> {
   body?: T
 }
 
-export interface HttpGetClient<T = any, R = any> {
-  get: (props: HttpRequest<T>) => Promise<HttpResponse<R>>
+export interface HttpGetClient {
+  get: <R = any, T = any>(props: HttpRequest<T>) => Promise<HttpResponse<R>>
 }
 
-export interface HttpClient<T = any, R = any> extends HttpGetClient<T, R> {
-  request: (props: HttpRequestRaw<T>) => Promise<HttpResponse<R>>
+export interface HttpClient extends HttpGetClient {
+  request: <R = any, T = any>(props: HttpRequestRaw<T>) => Promise<HttpResponse<R>>
 }

@@ -7,8 +7,8 @@ import {
 } from '~core/data/contracts'
 import axios, { AxiosResponse, isAxiosError } from 'axios'
 
-export class AxiosHttpClient<T = any, R = any> implements HttpClient<T, R> {
-  async request(request: HttpRequestRaw<T>): Promise<HttpResponse<R>> {
+export class AxiosHttpClient implements HttpClient {
+  async request<R = any, T = any>(request: HttpRequestRaw<T>): Promise<HttpResponse<R>> {
     const { method, url, body, headers, params } = request
     let httpResponse: AxiosResponse<R>
 
@@ -30,7 +30,7 @@ export class AxiosHttpClient<T = any, R = any> implements HttpClient<T, R> {
     return { statusCode: httpResponse.status, body: httpResponse.data }
   }
 
-  async get(request: HttpRequest<T>): Promise<HttpResponse<R>> {
+  async get<R = any, T = any>(request: HttpRequest<T>): Promise<HttpResponse<R>> {
     return await this.request({ ...request, method: HTTP_METHOD.GET })
   }
 }
