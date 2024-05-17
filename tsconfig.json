@@ -26,7 +26,7 @@
     "types": ["vitest/globals"],
     "paths": {
       "~core/*": ["packages/core/src/*"],
-      "~vue/*": ["packages/vue/src/*"],
+      "~vue/*": ["packages/vue-app/src/*"],
       "~mocks/*": ["tests/mocks/*"]
     }
   },
