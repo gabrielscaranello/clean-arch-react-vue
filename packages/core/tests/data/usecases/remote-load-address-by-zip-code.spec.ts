@@ -1,5 +1,5 @@
 import { RemoteLoadAddressByZipcode } from '~core/data/usecases'
-import { LoadAddressByZipcode } from '~core/domain'
+import { LoadAddressByZipcode, LoadAddressByZipcodeParams } from '~core/domain'
 import { LoadAddressByZipcodeStub, mockAddress } from '~mocks/domain'
 import { faker } from '~mocks/faker'
 
@@ -16,15 +16,15 @@ const makeSut = (): SutTypes => {
 }
 
 describe('data/usecases/remote-load-address-by-zip-code', () => {
-  const zipCode = faker.location.zipCode()
+  const params: LoadAddressByZipcodeParams = { zipCode: faker.location.zipCode() }
 
   it('should be call gateway with correct values', async () => {
     const { sut, gatewayStub } = makeSut()
     const loadSpy = vi.spyOn(gatewayStub, 'load')
 
-    await sut.load(zipCode)
+    await sut.load(params)
 
-    expect(loadSpy).toHaveBeenCalledWith(zipCode)
+    expect(loadSpy).toHaveBeenCalledWith(params)
   })
 
   it('should return address on success', async () => {
@@ -32,7 +32,7 @@ describe('data/usecases/remote-load-address-by-zip-code', () => {
     const mockedAddress = mockAddress()
     vi.spyOn(gatewayStub, 'load').mockResolvedValueOnce(mockedAddress)
 
-    const address = await sut.load(zipCode)
+    const address = await sut.load(params)
 
     expect(address).toEqual(mockedAddress)
   })
@@ -42,7 +42,7 @@ describe('data/usecases/remote-load-address-by-zip-code', () => {
     const { sut, gatewayStub } = makeSut()
     vi.spyOn(gatewayStub, 'load').mockRejectedValueOnce(error)
 
-    const promise = sut.load(zipCode)
+    const promise = sut.load(params)
 
     await expect(promise).rejects.toThrow(error)
   })

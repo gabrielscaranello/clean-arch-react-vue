@@ -1,7 +1,7 @@
 import { LoadAddressByZipcode } from '~core/domain'
 import { Validation } from '~core/presentation/contracts'
 import { RemoteLoadAddressByZipCodeController } from '~core/presentation/controllers'
-import { InputDto } from '~core/presentation/controllers/contracts'
+import { RemoteLoadAddressByZipCodeControllerParams } from '~core/presentation/controllers/contracts'
 import { LoadAddressByZipcodeStub } from '~mocks/domain'
 import { faker } from '~mocks/faker'
 import { ValidationStub } from '~mocks/presentation'
@@ -20,24 +20,24 @@ const makeSut = (): SutTypes => {
 }
 
 describe('presentation/controllers/load-address-by-zip-code', () => {
-  const input: InputDto = { zipCode: faker.location.zipCode() }
+  const params: RemoteLoadAddressByZipCodeControllerParams = { zipCode: faker.location.zipCode() }
 
   it('should call validation with correct value', async () => {
     const { sut, validationStub } = makeSut()
     const validateSpy = vi.spyOn(validationStub, 'validate')
 
-    await sut.handle(input)
+    await sut.handle(params)
 
-    expect(validateSpy).toHaveBeenCalledWith(input)
+    expect(validateSpy).toHaveBeenCalledWith(params)
   })
 
   it('should call gateway with correct value', async () => {
     const { sut, gatewayStub } = makeSut()
     const loadSpy = vi.spyOn(gatewayStub, 'load')
 
-    await sut.handle(input)
+    await sut.handle(params)
 
-    expect(loadSpy).toHaveBeenCalledWith(input.zipCode)
+    expect(loadSpy).toHaveBeenCalledWith(params)
   })
 
   it('should throws if validation fails', async () => {
@@ -45,7 +45,7 @@ describe('presentation/controllers/load-address-by-zip-code', () => {
     const { sut, validationStub } = makeSut()
     vi.spyOn(validationStub, 'validate').mockReturnValueOnce({ isValid: false, errors: {} })
 
-    const promise = sut.handle(input)
+    const promise = sut.handle(params)
 
     await expect(promise).rejects.toThrow(error)
   })
@@ -55,7 +55,7 @@ describe('presentation/controllers/load-address-by-zip-code', () => {
     const { sut, gatewayStub } = makeSut()
     vi.spyOn(gatewayStub, 'load').mockRejectedValueOnce(error)
 
-    const promise = sut.handle(input)
+    const promise = sut.handle(params)
 
     await expect(promise).rejects.toThrow(error)
   })
@@ -63,7 +63,7 @@ describe('presentation/controllers/load-address-by-zip-code', () => {
   it('should return address on success', async () => {
     const { sut } = makeSut()
 
-    const address = await sut.handle(input)
+    const address = await sut.handle(params)
 
     expect(address).toEqual(
       expect.objectContaining({
