@@ -5,9 +5,9 @@ import {
   ValidationComposite
 } from '~core/presentation/validation'
 
-import { Schema } from './contracts'
+import { ValidationSchema } from './contracts'
 
-export const validation = (schema: Schema): Validation => {
+export const validation = (schema: ValidationSchema): Validation => {
   const validators: Validation[] = []
   const keys = Object.keys(schema)
 

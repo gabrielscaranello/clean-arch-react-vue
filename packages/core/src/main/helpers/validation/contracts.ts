@@ -7,4 +7,4 @@ interface Validator {
   len?: LengthValidator
 }
 
-export type Schema = Record<string, Validator>
+export type ValidationSchema = Record<string, Validator>
