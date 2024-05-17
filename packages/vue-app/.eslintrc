@@ -1,0 +1,13 @@
+{
+  "root": true,
+  "extends": [
+    "../../.eslintrc",
+    "plugin:vue/vue3-essential",
+    "@vue/eslint-config-typescript",
+    "@vue/eslint-config-prettier/skip-formatting"
+  ],
+   "parserOptions": {
+    "parser": "@typescript-eslint/parser",
+    "extraFileExtensions": [".vue"]
+  }
+}
