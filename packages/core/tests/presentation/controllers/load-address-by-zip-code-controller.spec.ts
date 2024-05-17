@@ -1,7 +1,9 @@
 import { LoadAddressByZipCode } from '~core/domain'
 import { Validation } from '~core/presentation/contracts'
-import { RemoteLoadAddressByZipCodeController } from '~core/presentation/controllers'
-import { RemoteLoadAddressByZipCodeControllerParams } from '~core/presentation/controllers/contracts'
+import {
+  RemoteLoadAddressByZipCodeController,
+  RemoteLoadAddressByZipCodeControllerParams
+} from '~core/presentation/controllers'
 import { LoadAddressByZipCodeStub } from '~mocks/domain'
 import { faker } from '~mocks/faker'
 import { ValidationStub } from '~mocks/presentation'

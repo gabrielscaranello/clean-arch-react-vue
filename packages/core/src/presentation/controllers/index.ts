@@ -1,1 +1,1 @@
-export * from './remote-load-address-by-zip-code.controller'
+export * from './address'
