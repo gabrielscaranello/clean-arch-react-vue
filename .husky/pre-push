@@ -1,7 +1,7 @@
 yarn format --log-level silent
 yarn lint --fix
-yarn test:ci
 yarn typecheck
+yarn test:ci
 
 if [ -n "$(git status -s)" ]; then
   git add .
