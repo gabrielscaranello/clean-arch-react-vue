@@ -19,7 +19,7 @@
     "test:ci": "yarn test --coverage",
     "test:unit": "vitest --passWithNoTests -c vitest.config.unit.mts --watch",
     "build-only": "vite build",
-    "typecheck": "vue-tsc --noEmit",
+    "typecheck": "vue-tsc --build",
     "format": "prettier --write \"**/*.{ts,mts,md,json,vue}\" --ignore-path .gitignore",
     "lint": "eslint --ext .ts,.mts,.vue --ignore-path .gitignore ."
   },
