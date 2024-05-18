@@ -1,0 +1,17 @@
+.form {
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    gap: 0.5rem;
+  }
+
+  &__input {
+    grid-column: 1 / -1;
+    width: 100%;
+  }
+
+  &__submit {
+    justify-self: end;
+  }
+}

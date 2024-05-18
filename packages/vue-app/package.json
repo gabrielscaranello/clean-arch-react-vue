@@ -19,11 +19,12 @@
     "test:ci": "yarn test --coverage",
     "test:unit": "vitest --passWithNoTests -c vitest.config.unit.mts --watch",
     "build-only": "vite build",
-    "typecheck": "vue-tsc --build",
+    "typecheck": "vue-tsc --noEmit",
     "format": "prettier --write \"**/*.{ts,mts,md,json,vue}\" --ignore-path .gitignore",
     "lint": "eslint --ext .ts,.mts,.vue --ignore-path .gitignore ."
   },
   "dependencies": {
+    "@material/web": "^1.4.1",
     "vue": "^3.4.21"
   },
   "devDependencies": {
@@ -49,6 +50,7 @@
     "jsdom": "^24.0.0",
     "npm-run-all2": "^6.1.2",
     "prettier": "^3.2.5",
+    "sass": "^1.77.2",
     "typescript": "^5.4.5",
     "vite": "^5.2.8",
     "vitest": "^1.4.0",

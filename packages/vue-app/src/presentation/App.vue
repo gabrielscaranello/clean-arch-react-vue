@@ -1,9 +1,9 @@
 <script setup lang="ts">
-  import { ref } from 'vue'
-
-  const msg = ref('Clean Architecture Vue')
+  import { Form } from '@/presentation/components/statefull'
 </script>
 
 <template>
-  <div>{{ msg }}</div>
+  <div class="container">
+    <Form />
+  </div>
 </template>

@@ -3,7 +3,7 @@
   "include": ["src", "*.config.*", "*.setup.*", "*.d.ts", ".eslintrc.*"],
   "exclude": ["node_modules", "dist"],
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": ".",
     "composite": true,
     "forceConsistentCasingInFileNames": true,
     "jsx": "preserve",
