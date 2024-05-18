@@ -1,5 +1,6 @@
-import { Address, LoadAddressByZipCode } from '~core/domain'
-import { mockAddress } from '~mocks/domain'
+import { mockAddress } from '@mocks/domain'
+
+import { Address, LoadAddressByZipCode } from '@/domain'
 
 export class LoadAddressByZipCodeStub implements LoadAddressByZipCode {
   async load(): Promise<Address> {

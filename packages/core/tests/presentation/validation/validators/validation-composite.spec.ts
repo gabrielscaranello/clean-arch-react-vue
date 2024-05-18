@@ -1,7 +1,8 @@
-import { Validation } from '~core/presentation/contracts'
-import { ValidationComposite } from '~core/presentation/validation'
-import { faker, fakerUnique } from '~mocks/faker'
-import { ValidationStub } from '~mocks/presentation'
+import { faker, fakerUnique } from '@mocks/faker'
+import { ValidationStub } from '@mocks/presentation'
+
+import { Validation } from '@/presentation/contracts'
+import { ValidationComposite } from '@/presentation/validation'
 
 interface SutType {
   sut: ValidationComposite

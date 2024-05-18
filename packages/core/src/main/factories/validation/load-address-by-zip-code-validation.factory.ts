@@ -1,5 +1,5 @@
-import { validation } from '~core/main/helpers'
-import { Validation } from '~core/presentation/contracts'
+import { validation } from '@/main/helpers'
+import { Validation } from '@/presentation/contracts'
 
 export const makeLoadAddressByZipCodeValidation = (): Validation => {
   return validation({

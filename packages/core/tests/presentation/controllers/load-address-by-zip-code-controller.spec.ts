@@ -1,12 +1,13 @@
-import { LoadAddressByZipCode } from '~core/domain'
-import { Validation } from '~core/presentation/contracts'
+import { LoadAddressByZipCodeStub } from '@mocks/domain'
+import { faker } from '@mocks/faker'
+import { ValidationStub } from '@mocks/presentation'
+
+import { LoadAddressByZipCode } from '@/domain'
+import { Validation } from '@/presentation/contracts'
 import {
   RemoteLoadAddressByZipCodeController,
   RemoteLoadAddressByZipCodeControllerParams
-} from '~core/presentation/controllers'
-import { LoadAddressByZipCodeStub } from '~mocks/domain'
-import { faker } from '~mocks/faker'
-import { ValidationStub } from '~mocks/presentation'
+} from '@/presentation/controllers'
 
 interface SutTypes {
   sut: RemoteLoadAddressByZipCodeController

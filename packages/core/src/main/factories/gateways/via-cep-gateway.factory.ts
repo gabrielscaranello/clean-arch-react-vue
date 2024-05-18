@@ -1,6 +1,6 @@
-import { LoadAddressByZipCode } from '~core/domain'
-import { ViaCepGateway } from '~core/infra/gateways'
-import { makeHttpClient } from '~core/main/factories'
+import { LoadAddressByZipCode } from '@/domain'
+import { ViaCepGateway } from '@/infra/gateways'
+import { makeHttpClient } from '@/main/factories'
 
 export const makeViaCepGateway = (): LoadAddressByZipCode => {
   const httpClient = makeHttpClient()

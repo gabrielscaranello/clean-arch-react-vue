@@ -1,4 +1,4 @@
-import { Address } from '~core/domain/models'
+import { Address } from '@/domain/models'
 
 export interface LoadAddressByZipCodeParams {
   zipCode: string

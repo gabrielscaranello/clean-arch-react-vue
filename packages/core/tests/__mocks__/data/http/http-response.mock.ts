@@ -1,6 +1,7 @@
-import { HTTP_STATUS_CODE } from '~core/data/contracts'
-import { faker, fakerObject } from '~mocks/faker'
+import { faker, fakerObject } from '@mocks/faker'
 import { AxiosResponse } from 'axios'
+
+import { HTTP_STATUS_CODE } from '@/data/contracts'
 
 export const mockHttpResponse = (): Partial<AxiosResponse<object>> => ({
   data: fakerObject(),

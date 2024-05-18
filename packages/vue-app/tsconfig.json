@@ -1,8 +1,21 @@
 {
-  "extends": ["@vue/tsconfig/tsconfig.json", "../../tsconfig.json"],
-  "include": ["env.d.ts", "./src/**/*", "./src/**/*.vue"],
-  "exclude": ["node_modules"],
+  "extends": "../../tsconfig.json",
+  "include": ["src", "*.config.*", "*.setup.*", "*.d.ts", ".eslintrc.*"],
+  "exclude": ["node_modules", "dist"],
   "compilerOptions": {
-    "baseUrl": "."
+    "baseUrl": "./",
+    "composite": true,
+    "forceConsistentCasingInFileNames": true,
+    "jsx": "preserve",
+    "noEmit": false,
+    "rootDir": ".",
+    "target": "ES6",
+    "useDefineForClassFields": true,
+    "tsBuildInfoFile": "../.././node_modules/.tmp/tsconfig.vue-app.tsbuildinfo",
+
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "paths": {
+      "@/*": ["src/*"]
+    }
   }
 }

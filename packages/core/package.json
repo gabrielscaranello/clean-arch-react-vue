@@ -4,6 +4,7 @@
   "description": "Core of application",
   "author": "Gabriel Scaranello <gabrieljscaranello@gmail.com>",
   "license": "MIT",
+  "type": "module",
   "directories": {
     "lib": "src",
     "test": "__tests__"
@@ -11,7 +12,30 @@
   "files": [
     "src"
   ],
+  "scripts": {
+    "format": "prettier --write \"**/*.{ts,mts,md,json}\" --ignore-path .gitignore",
+    "lint": "eslint --ext .ts,.mts --ignore-path .gitignore .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run --passWithNoTests",
+    "test:ci": "yarn test --coverage",
+    "test:unit": "vitest --passWithNoTests -c vitest.config.unit.mts --watch"
+  },
   "dependencies": {
     "axios": "^1.6.8"
+  },
+  "devDependencies": {
+    "@ianvs/prettier-plugin-sort-imports": "^4.2.1",
+    "@typescript-eslint/eslint-plugin": "^7.6.0",
+    "@typescript-eslint/parser": "^7.6.0",
+    "@vitest/coverage-istanbul": "^1.6.0",
+    "eslint": "^8.57.0",
+    "eslint-config-love": "^47.0.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-n": "^15.7.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "eslint-plugin-promise": "^6.1.1",
+    "prettier": "^3.2.5",
+    "typescript": "^5.4.5",
+    "vitest": "^1.6.0"
   }
 }

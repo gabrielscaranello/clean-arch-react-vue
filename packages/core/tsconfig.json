@@ -1,0 +1,16 @@
+{
+  "include": ["src", "tests", "./*.mts", ".eslintrc.*"],
+  "exclude": ["node_modules"],
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "composite": true,
+    "noEmit": false,
+    "tsBuildInfoFile": "../.././node_modules/.tmp/tsconfig.core.tsbuildinfo",
+
+    "paths": {
+      "@mocks/*": ["./tests/__mocks__/*"],
+      "@/*": ["./src/*"]
+    }
+  }
+}

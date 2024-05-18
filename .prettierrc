@@ -16,9 +16,10 @@
   "singleQuote": true,
   "tabWidth": 2,
   "trailingComma": "none",
+  "vueIndentScriptAndStyle": true,
   "useTabs": false,
   "plugins": ["@ianvs/prettier-plugin-sort-imports"],
-  "importOrder": ["<BUILTIN_MODULES>", "<THIRD_PARTY_MODULES>", "", "^~/(.*)$", "", "^[./]"],
+  "importOrder": ["<BUILTIN_MODULES>", "<THIRD_PARTY_MODULES>", "", "^@/(.*)$", "", "^[./]"],
   "importOrderParserPlugins": ["typescript", "decorators-legacy"],
   "importOrderTypeScriptVersion": "5.0.0"
 }

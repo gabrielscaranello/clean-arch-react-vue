@@ -1,11 +1,12 @@
+import axios, { AxiosResponse, isAxiosError } from 'axios'
+
 import {
   HTTP_METHOD,
   HttpClient,
   HttpRequest,
   HttpRequestRaw,
   HttpResponse
-} from '~core/data/contracts'
-import axios, { AxiosResponse, isAxiosError } from 'axios'
+} from '@/data/contracts'
 
 export class AxiosHttpClient implements HttpClient {
   async request<R = any, T = any>(request: HttpRequestRaw<T>): Promise<HttpResponse<R>> {

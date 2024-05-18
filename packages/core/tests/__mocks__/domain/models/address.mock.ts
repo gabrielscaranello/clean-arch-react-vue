@@ -1,5 +1,6 @@
-import { Address } from '~core/domain/models'
-import { faker } from '~mocks/faker'
+import { faker } from '@mocks/faker'
+
+import { Address } from '@/domain/models'
 
 export const mockAddress = (): Address => ({
   zipCode: faker.location.zipCode(),

@@ -1,6 +1,6 @@
-import { RemoteLoadAddressByZipCode } from '~core/data/usecases'
-import { LoadAddressByZipCode } from '~core/domain'
-import { makeViaCepGateway } from '~core/main/factories'
+import { RemoteLoadAddressByZipCode } from '@/data/usecases'
+import { LoadAddressByZipCode } from '@/domain'
+import { makeViaCepGateway } from '@/main/factories'
 
 export const makeRemoteLoadAddressByZipCode = (): LoadAddressByZipCode => {
   const viaCepGateway = makeViaCepGateway()

@@ -1,3 +1,9 @@
+<script setup lang="ts">
+  import { ref } from 'vue'
+
+  const msg = ref('Clean Architecture Vue')
+</script>
+
 <template>
-  <div>Hello, Vue!</div>
+  <div>{{ msg }}</div>
 </template>

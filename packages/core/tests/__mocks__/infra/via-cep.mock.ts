@@ -1,5 +1,6 @@
-import { ViaCepLoadAddressByZipCodeResult } from '~core/infra/gateways'
-import { faker } from '~mocks/faker'
+import { faker } from '@mocks/faker'
+
+import { ViaCepLoadAddressByZipCodeResult } from '@/infra/gateways'
 
 export const mockViaCepLoadAddressByZipCodeResult = (): ViaCepLoadAddressByZipCodeResult => ({
   cep: faker.location.zipCode(),

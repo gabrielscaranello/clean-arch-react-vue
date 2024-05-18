@@ -1,4 +1,4 @@
-import { Validation, ValidationInput, ValidationResult } from '~core/presentation/contracts'
+import { Validation, ValidationInput, ValidationResult } from '@/presentation/contracts'
 
 export class ValidationStub implements Validation {
   validate<T extends ValidationInput>(): ValidationResult<T> {

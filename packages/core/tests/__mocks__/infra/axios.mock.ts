@@ -1,9 +1,10 @@
+import { mockHttpResponse } from '@mocks/data'
+import { faker, fakerObject } from '@mocks/faker'
 import { MockedObjectDeep } from '@vitest/spy'
-import { HTTP_METHOD, HttpRequestRaw } from '~core/data/contracts'
-import { mockHttpResponse } from '~mocks/data'
-import { faker, fakerObject } from '~mocks/faker'
 import axios, { AxiosStatic } from 'axios'
 import { mockClear } from 'vitest-mock-extended'
+
+import { HTTP_METHOD, HttpRequestRaw } from '@/data/contracts'
 
 export const mockAxios = (): MockedObjectDeep<AxiosStatic> => {
   const mockedAxios = vi.mocked(axios, true)

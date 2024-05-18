@@ -1,15 +1,23 @@
+import { fileURLToPath } from 'node:url'
 import { defineConfig, mergeConfig } from 'vitest/config'
 
-import sharedConfig from '../../vitest.config.mjs'
-import viteConfig from './vite.config.mts'
+import viteConfig from './vite.config.mjs'
 
-const localConfig = mergeConfig(
+export default mergeConfig(
   viteConfig,
   defineConfig({
     test: {
-      environment: 'jsdom'
+      globals: true,
+      environment: 'jsdom',
+      root: fileURLToPath(new URL('./', import.meta.url)),
+      coverage: {
+        provider: 'istanbul',
+        all: true,
+        cleanOnRerun: true,
+        reporter: ['text', 'html-spa', 'lcov'],
+        include: ['src/**/*.{ts,vue}'],
+        exclude: ['**/*.{d,spec,config}.ts', '**/{index.ts,App.vue}', '**/__mocks__/**/*.*']
+      }
     }
   })
 )
-
-export default mergeConfig(sharedConfig, localConfig)

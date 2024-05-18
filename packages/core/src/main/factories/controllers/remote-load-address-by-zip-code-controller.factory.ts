@@ -1,6 +1,6 @@
-import { makeLoadAddressByZipCodeValidation, makeViaCepGateway } from '~core/main/factories'
-import { Controller } from '~core/presentation/contracts'
-import { RemoteLoadAddressByZipCodeController } from '~core/presentation/controllers'
+import { makeLoadAddressByZipCodeValidation, makeViaCepGateway } from '@/main/factories'
+import { Controller } from '@/presentation/contracts'
+import { RemoteLoadAddressByZipCodeController } from '@/presentation/controllers'
 
 export const makeRemoteLoadAddressByZipCodeController = (): Controller => {
   const gateway = makeViaCepGateway()

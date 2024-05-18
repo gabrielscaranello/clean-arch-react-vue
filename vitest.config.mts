@@ -1,26 +1,23 @@
-import { defineConfig, mergeConfig } from 'vitest/config'
+import Vue from '@vitejs/plugin-vue'
+import { defineConfig } from 'vitest/config'
 
-import viteConfig from './vite.config.mts'
-
-export default mergeConfig(
-  viteConfig,
-  defineConfig({
-    test: {
-      globals: true,
-      coverage: {
-        provider: 'istanbul',
-        all: true,
-        cleanOnRerun: true,
-        reporter: ['text', 'html-spa', 'lcov'],
-        include: ['**/*.ts', '**/*.tsx', '**/*.vue'],
-        exclude: [
-          '**/*.{d,spec,config}.ts',
-          '**/{index.ts,App.vue}',
-          '**/mocks/**/*.*',
-          'packages/core/src/main/factories/**/*.*',
-          '!packages/core/src/main/factories/validation/**/*.*'
-        ]
-      }
+export default defineConfig({
+  plugins: [Vue()],
+  test: {
+    globals: true,
+    coverage: {
+      provider: 'istanbul',
+      all: true,
+      cleanOnRerun: true,
+      reporter: ['text', 'html-spa', 'lcov'],
+      include: ['packages/**/src/**/*.{ts,vue}'],
+      exclude: [
+        '**/*.{d,spec,config}.ts',
+        '**/{index.ts,App.vue}',
+        '**/__mocks__/**/*.*',
+        '**/factories/**/*.*',
+        '!**/factories/validation/**/*.*'
+      ]
     }
-  })
-)
+  }
+})
