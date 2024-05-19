@@ -3,7 +3,7 @@ import { createApp } from 'vue'
 
 import App from './App.vue'
 
-import './scss/app.scss'
+import '@styles/app.scss'
 
 const app = createApp(App)
 

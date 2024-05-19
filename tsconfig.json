@@ -6,6 +6,7 @@
   },
   "references": [
     { "path": "./packages/core/tsconfig.json" },
-    { "path": "./packages/vue-app/tsconfig.json" }
+    { "path": "./packages/vue-app/tsconfig.json" },
+    { "path": "./packages/styles/tsconfig.json" }
   ]
 }

@@ -16,7 +16,8 @@
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "paths": {
       "@vue-app/*": ["src/*"],
-      "@core": ["../core/src"]
+      "@core": ["../core/src"],
+      "@styles/*": ["../styles/src/*"]
     }
   },
   "references": [{ "path": "../core/tsconfig.json" }]

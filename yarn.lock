@@ -266,6 +266,16 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@clean-arch-react-vue/styles@workspace:packages/styles":
+  version: 0.0.0-use.local
+  resolution: "@clean-arch-react-vue/styles@workspace:packages/styles"
+  dependencies:
+    "@ianvs/prettier-plugin-sort-imports": "npm:^4.2.1"
+    prettier: "npm:^3.2.5"
+    sass: "npm:^1.77.2"
+  languageName: unknown
+  linkType: soft
+
 "@clean-arch-react-vue/vue-app@workspace:packages/vue-app":
   version: 0.0.0-use.local
   resolution: "@clean-arch-react-vue/vue-app@workspace:packages/vue-app"
@@ -286,7 +296,6 @@ __metadata:
     "@vue/eslint-config-typescript": "npm:^13.0.0"
     "@vue/test-utils": "npm:^2.4.5"
     "@vue/tsconfig": "npm:^0.5.1"
-    add: "npm:^2.0.6"
     eslint: "npm:^8.57.0"
     eslint-config-love: "npm:^47.0.0"
     eslint-plugin-import: "npm:^2.29.1"
@@ -1366,13 +1375,6 @@ __metadata:
   bin:
     acorn: bin/acorn
   checksum: 10c0/3ff155f8812e4a746fee8ecff1f227d527c4c45655bb1fad6347c3cb58e46190598217551b1500f18542d2bbe5c87120cb6927f5a074a59166fbdd9468f0a299
-  languageName: node
-  linkType: hard
-
-"add@npm:^2.0.6":
-  version: 2.0.6
-  resolution: "add@npm:2.0.6"
-  checksum: 10c0/6b21d5f2e58cf5e15d56cc6f9ebce04f04f4c33ae25f09d600ddacf8df00036ba521f17feb1b3f81307b7c6d2ef0bed8b511a0f86f062eb90c2f909b48b588ae
   languageName: node
   linkType: hard
 
