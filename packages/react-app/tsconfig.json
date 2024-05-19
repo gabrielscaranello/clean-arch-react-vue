@@ -22,10 +22,10 @@
     "tsBuildInfoFile": "../.././node_modules/.tmp/tsconfig.vue-app.tsbuildinfo",
 
     "paths": {
-      "@vue-app/*": ["src/*"],
+      "@react-app/*": ["src/*"],
       "@core": ["../core/src"],
       "@styles/*": ["../styles/src/*"]
     }
   },
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "references": [{ "path": "./tsconfig.node.json" }, { "path": "../core/tsconfig.json" }]
 }

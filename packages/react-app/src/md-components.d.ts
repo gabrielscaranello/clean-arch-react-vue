@@ -12,10 +12,10 @@ declare global {
       'md-list-item': MDElement
       'md-linear-progress': MDElement & { indeterminate: boolean }
       'md-outlined-text-field': MDElement & {
-        label: string
+        label?: string
         placeholder?: string
-        value: string
-        error: boolean
+        value?: string
+        error?: boolean
         'error-text'?: string
         onInput: FormEventHandler<HTMLInputElement>
       }

@@ -3,5 +3,6 @@ export interface InputProps {
   value: string
   error?: string
   placeholder?: string
+  className?: string
   onInput: (value: string) => void
 }
