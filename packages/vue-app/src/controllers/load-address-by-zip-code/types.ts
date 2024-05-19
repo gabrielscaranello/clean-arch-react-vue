@@ -1,17 +1,14 @@
 import { LoadAddressByZipCodeController as CoreLoadAddressByZipCodeController } from '@core'
+import { useAddressStore } from '@vue-app/store'
 
 interface Form {
   zipCode: string
 }
 
-interface State {
-  isLoading: boolean
-  form: Form
-}
-
 export interface LoadAddressByZipCodeController {
   onSubmit: () => Promise<void>
-  state: State
+  form: Form
+  store: ReturnType<typeof useAddressStore>
 }
 
 export type LoadAddressByZipCodeControllerBuilder = (

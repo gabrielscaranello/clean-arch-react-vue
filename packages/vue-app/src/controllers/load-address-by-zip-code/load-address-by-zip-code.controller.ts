@@ -1,3 +1,4 @@
+import { useAddressStore } from '@vue-app/store'
 import { reactive } from 'vue'
 
 import { LoadAddressByZipCodeControllerBuilder } from './types'
@@ -5,22 +6,21 @@ import { LoadAddressByZipCodeControllerBuilder } from './types'
 export const makeLoadAddressByZipCodeController: LoadAddressByZipCodeControllerBuilder = (
   controller
 ) => {
-  const state = reactive({
-    isLoading: false,
-    form: { zipCode: '' }
-  })
+  const store = useAddressStore()
+  const form = reactive({ zipCode: '' })
 
   const onSubmit = async (): Promise<void> => {
-    state.isLoading = true
+    store.setIsLoading(true)
 
     try {
-      await controller.handle(state.form)
+      const result = await controller.handle(form)
+      store.setAddress(result)
     } catch (error) {
       console.error(error)
     } finally {
-      state.isLoading = false
+      store.setIsLoading(false)
     }
   }
 
-  return { state, onSubmit }
+  return { store, form, onSubmit }
 }
