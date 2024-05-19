@@ -1,0 +1,11 @@
+.page-title {
+  display: grid;
+  gap: 0.5rem;
+
+  p {
+    margin: 0;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--md-sys-color-on-surface-variant);
+  }
+}

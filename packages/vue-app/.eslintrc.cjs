@@ -14,12 +14,14 @@ module.exports = {
     '@vue/eslint-config-prettier/skip-formatting'
   ],
   parserOptions: {
-    ecmaVersion: 'latest'
+    ecmaVersion: 'latest',
+    extraFileExtensions: ['.vue']
   },
   rules: {
     ...globalConfig.rules,
 
     '@typescript-eslint/no-unsafe-call': 'off',
-    '@typescript-eslint/no-unsafe-member-access': 'off'
+    '@typescript-eslint/no-unsafe-member-access': 'off',
+    'vue/no-deprecated-slot-attribute': 'off'
   }
 }

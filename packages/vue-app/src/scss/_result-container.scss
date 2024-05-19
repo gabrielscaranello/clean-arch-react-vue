@@ -1,0 +1,12 @@
+.result {
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    gap: 0.5rem;
+  }
+
+  &__title {
+    padding-left: 1rem;
+  }
+}
