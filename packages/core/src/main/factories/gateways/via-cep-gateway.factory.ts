@@ -4,6 +4,6 @@ import { makeHttpClient } from '@core/main/factories'
 
 export const makeViaCepGateway = (): LoadAddressByZipCode => {
   const httpClient = makeHttpClient()
-  const baseURL = 'https://viacep.com.br/ws'
+  const baseURL = 'https://viacep.com.br'
   return new ViaCepGateway(httpClient, baseURL)
 }

@@ -5,7 +5,7 @@ import { defineConfig } from 'vite'
 
 export default defineConfig({
   plugins: [
-    Vue(),
+    Vue({ template: { compilerOptions: { isCustomElement: (tag) => tag.startsWith('md-') } } }),
     Fonts({
       google: {
         families: [

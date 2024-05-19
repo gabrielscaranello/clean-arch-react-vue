@@ -19,7 +19,8 @@ export const useAddressStore = defineStore('address', {
   actions: {
     setAddress(address?: Address) {
       this.address = address
-      this.isLoaded = address !== undefined
+      this.isLoaded = !!address
+      this.setHasError(!address)
     },
 
     setIsLoading(isLoading: boolean) {

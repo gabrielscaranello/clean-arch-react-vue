@@ -31,7 +31,6 @@ export const makeLoadAddressByZipCodeController: LoadAddressByZipCodeControllerB
       store.setAddress(result)
     } catch (error) {
       store.setAddress()
-      store.setHasError(true)
     } finally {
       triedSubmit.value = false
       store.setIsLoading(false)
