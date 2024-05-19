@@ -1,16 +1,8 @@
 <script setup lang="ts">
-  import { makeRemoteLoadAddressByZipCodeController } from '@core'
-  import { reactive } from 'vue'
-
   import { Button, Input } from '@/presentation/components/stateless'
+  import { useLoadAddressByZipCodeController } from '@/presentation/factories'
 
-  const useCase = makeRemoteLoadAddressByZipCodeController()
-
-  const form = reactive({ zipCode: '' })
-  const onSubmit = async (): Promise<void> => {
-    await useCase.handle({ zipCode: form.zipCode })
-    await Promise.reject(new Error('Not implemented'))
-  }
+  const { state, onSubmit } = useLoadAddressByZipCodeController()
 </script>
 
 <template>
@@ -19,7 +11,7 @@
       class="form__input"
       label="CEP"
       placeholder="Insira o CEP para consultar"
-      v-model="form.zipCode" />
+      v-model="state.form.zipCode" />
     <Button class="form__submit" type="submit">Consultar</Button>
   </form>
 </template>

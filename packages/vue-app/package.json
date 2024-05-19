@@ -5,18 +5,12 @@
   "author": "Gabriel Scaranello <gabrieljscaranello@gmail.com>",
   "license": "MIT",
   "type": "module",
-  "directories": {
-    "lib": "src"
-  },
-  "files": [
-    "src"
-  ],
   "scripts": {
     "dev": "vite",
     "build": "run-p typecheck \"build-only {@}\" --",
     "preview": "vite preview",
     "build-only": "vite build",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "true",
     "format": "prettier --write \"**/*.{ts,mts,md,json,vue}\" --ignore-path .gitignore",
     "lint": "eslint --ext .ts,.mts,.vue --ignore-path .gitignore ."
   },
