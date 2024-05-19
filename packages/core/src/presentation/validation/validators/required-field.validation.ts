@@ -1,5 +1,5 @@
 import {
-  MissingParamError,
+  RequiredFieldError,
   Validation,
   ValidationInput,
   ValidationResult
@@ -12,7 +12,7 @@ export class RequiredFieldValidation implements Validation {
     let errors = {}
 
     if (!input[this.fieldName]) {
-      const error = new MissingParamError(this.fieldName)
+      const error = new RequiredFieldError()
       errors = { [this.fieldName]: error.message }
     }
 

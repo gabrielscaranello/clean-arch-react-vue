@@ -15,11 +15,8 @@ export class LengthValidation implements Validation {
     let errors = {}
     const value = input[this.fieldName] as string
 
-    if (!value) {
-      const error = new InvalidLengthError(0, this.length)
-      errors = { [this.fieldName]: error.message }
-    } else if (value.length !== this.length) {
-      const error = new InvalidLengthError(value.length, this.length)
+    if (!value || value.length !== this.length) {
+      const error = new InvalidLengthError(this.length)
       errors = { [this.fieldName]: error.message }
     }
 

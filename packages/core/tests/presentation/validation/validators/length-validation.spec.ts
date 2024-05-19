@@ -18,7 +18,7 @@ describe('presentation/validation/validators/length-validation', () => {
   it('should return InvalidLengthError if length is less than expected', () => {
     const { sut, fieldName, length } = makeSut()
     const value = faker.string.alphanumeric(length - 1)
-    const error = new InvalidLengthError(value.length, length)
+    const error = new InvalidLengthError(length)
 
     const result = sut.validate({ [fieldName]: value })
 
@@ -29,7 +29,7 @@ describe('presentation/validation/validators/length-validation', () => {
   it('should return InvalidLengthError if length is more than expected', () => {
     const { sut, fieldName, length } = makeSut()
     const value = faker.string.alphanumeric(length + 1)
-    const error = new InvalidLengthError(value.length, length)
+    const error = new InvalidLengthError(length)
 
     const result = sut.validate({ [fieldName]: value })
 
@@ -49,7 +49,7 @@ describe('presentation/validation/validators/length-validation', () => {
   it('should return false if no value is provided', () => {
     const { sut, fieldName, length } = makeSut()
     const otherFieldName = fakerUnique(() => faker.database.column(), { exclude: [fieldName] })()
-    const error = new InvalidLengthError(0, length)
+    const error = new InvalidLengthError(length)
 
     const result = sut.validate({ [otherFieldName]: faker.string.alphanumeric() })
 

@@ -1,4 +1,4 @@
-import { MissingParamError, RequiredFieldValidation } from '@core/presentation'
+import { RequiredFieldError, RequiredFieldValidation } from '@core/presentation'
 import { faker } from '@mocks/faker'
 
 interface SutTypes {
@@ -15,7 +15,7 @@ const makeSut = (): SutTypes => {
 describe('presentation/validation/validators/required-field-validation', () => {
   it('should return MissingParamError if validation fails', () => {
     const { sut, fieldName } = makeSut()
-    const error = new MissingParamError(fieldName)
+    const error = new RequiredFieldError()
 
     const result = sut.validate({ [fieldName]: '' })
 
