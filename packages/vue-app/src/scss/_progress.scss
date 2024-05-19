@@ -1,0 +1,14 @@
+.progress {
+  &__container {
+    display: grid;
+    grid-template-columns: auto;
+    grid-auto-rows: max-content;
+    width: auto;
+    gap: 0.25rem;
+  }
+
+  &__text {
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+}

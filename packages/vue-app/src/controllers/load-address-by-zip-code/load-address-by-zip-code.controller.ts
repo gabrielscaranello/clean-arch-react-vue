@@ -19,8 +19,9 @@ export const makeLoadAddressByZipCodeController: LoadAddressByZipCodeControllerB
 
   const onSubmit = async (): Promise<void> => {
     if (!triedSubmit.value) {
-      triedSubmit.value = true
       handleValidation()
+      triedSubmit.value = true
+      if (!validation.value.isValid) return
     }
 
     store.setIsLoading(true)
@@ -30,8 +31,9 @@ export const makeLoadAddressByZipCodeController: LoadAddressByZipCodeControllerB
       store.setAddress(result)
     } catch (error) {
       store.setAddress()
-      console.error(error)
+      store.setHasError(true)
     } finally {
+      triedSubmit.value = false
       store.setIsLoading(false)
     }
   }

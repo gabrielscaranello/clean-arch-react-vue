@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <md-list>
+  <md-list class="result__list">
     <slot />
   </md-list>
 </template>

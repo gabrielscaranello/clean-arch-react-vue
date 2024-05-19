@@ -4,6 +4,7 @@ import { defineStore } from 'pinia'
 interface State {
   isLoading: boolean
   isLoaded: boolean
+  hasError: boolean
   address?: Address
 }
 
@@ -11,6 +12,7 @@ export const useAddressStore = defineStore('address', {
   state: (): State => ({
     isLoading: false,
     isLoaded: false,
+    hasError: false,
     address: undefined
   }),
 
@@ -22,6 +24,15 @@ export const useAddressStore = defineStore('address', {
 
     setIsLoading(isLoading: boolean) {
       this.isLoading = isLoading
+    },
+
+    setHasError(hasError: boolean) {
+      this.hasError = hasError
+
+      if (hasError) {
+        this.address = undefined
+        this.isLoaded = false
+      }
     }
   }
 })

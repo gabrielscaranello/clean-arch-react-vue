@@ -9,7 +9,7 @@
 
 <template>
   <md-list-item>
-    <div slot="headline">
+    <div class="list-item__headline" slot="headline">
       {{ title }}
     </div>
     <div slot="supporting-text">

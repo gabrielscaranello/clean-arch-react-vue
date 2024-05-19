@@ -32,7 +32,7 @@
     :error="!!props.error"
     :error-text="props.error"
     @input="onInput">
-    <md-icon-button @click="onClear" v-if="props.modelValue" slot="trailing-icon">
+    <md-icon-button @click.prevent="onClear" v-if="props.modelValue" slot="trailing-icon">
       <md-icon>close</md-icon>
     </md-icon-button>
   </md-outlined-text-field>
