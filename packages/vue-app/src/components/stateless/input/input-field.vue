@@ -6,6 +6,7 @@
   const props = defineProps<{
     label: string
     modelValue: string
+    error?: string
     placeholder?: string
   }>()
 
@@ -28,6 +29,8 @@
     :label="props.label"
     :placeholder="props.placeholder"
     :value="props.modelValue"
+    :error="!!props.error"
+    :error-text="props.error"
     @input="onInput">
     <md-icon-button @click="onClear" v-if="props.modelValue" slot="trailing-icon">
       <md-icon>close</md-icon>

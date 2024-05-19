@@ -1,15 +1,28 @@
+import { ValidationResult } from '@core'
 import { useAddressStore } from '@vue-app/store'
-import { reactive } from 'vue'
+import { computed, reactive, ref, watch } from 'vue'
 
-import { LoadAddressByZipCodeControllerBuilder } from './types'
+import { LoadAddressByZipCodeControllerBuilder, LoadAddressByZipCodeForm } from './types'
 
 export const makeLoadAddressByZipCodeController: LoadAddressByZipCodeControllerBuilder = (
-  controller
+  controller,
+  validator
 ) => {
   const store = useAddressStore()
-  const form = reactive({ zipCode: '' })
+  const form = reactive<LoadAddressByZipCodeForm>({ zipCode: '' })
+  const triedSubmit = ref(false)
+  const validation = ref<ValidationResult<LoadAddressByZipCodeForm>>({ isValid: true, errors: {} })
+
+  const handleValidation = (): void => {
+    validation.value = validator.validate(form)
+  }
 
   const onSubmit = async (): Promise<void> => {
+    if (!triedSubmit.value) {
+      triedSubmit.value = true
+      handleValidation()
+    }
+
     store.setIsLoading(true)
 
     try {
@@ -23,5 +36,10 @@ export const makeLoadAddressByZipCodeController: LoadAddressByZipCodeControllerB
     }
   }
 
-  return { store, form, onSubmit }
+  const hasErrors = computed(() => triedSubmit.value && !validation.value.isValid)
+  const errors = computed(() => (hasErrors.value ? validation.value.errors : {}))
+
+  watch(form, handleValidation, { deep: true })
+
+  return { store, form, onSubmit, hasErrors, errors }
 }

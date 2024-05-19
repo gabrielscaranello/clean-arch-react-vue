@@ -1,16 +1,24 @@
-import { LoadAddressByZipCodeController as CoreLoadAddressByZipCodeController } from '@core'
+import {
+  LoadAddressByZipCodeController as CoreLoadAddressByZipCodeController,
+  Validation,
+  ValidationErrors
+} from '@core'
 import { useAddressStore } from '@vue-app/store'
+import { ComputedRef } from 'vue'
 
-interface Form {
+export interface LoadAddressByZipCodeForm {
   zipCode: string
 }
 
 export interface LoadAddressByZipCodeController {
   onSubmit: () => Promise<void>
-  form: Form
+  form: LoadAddressByZipCodeForm
   store: ReturnType<typeof useAddressStore>
+  hasErrors: ComputedRef<boolean>
+  errors: ComputedRef<ValidationErrors<LoadAddressByZipCodeForm>>
 }
 
 export type LoadAddressByZipCodeControllerBuilder = (
-  controller: CoreLoadAddressByZipCodeController
+  controller: CoreLoadAddressByZipCodeController,
+  validator: Validation
 ) => LoadAddressByZipCodeController

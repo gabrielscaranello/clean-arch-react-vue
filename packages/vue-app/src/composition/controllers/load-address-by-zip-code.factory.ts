@@ -1,4 +1,4 @@
-import { makeRemoteLoadAddressByZipCodeController } from '@core'
+import { makeLoadAddressByZipCodeValidation, makeRemoteLoadAddressByZipCodeController } from '@core'
 import {
   LoadAddressByZipCodeController,
   makeLoadAddressByZipCodeController
@@ -6,5 +6,6 @@ import {
 
 export const useLoadAddressByZipCodeController = (): LoadAddressByZipCodeController => {
   const controller = makeRemoteLoadAddressByZipCodeController()
-  return makeLoadAddressByZipCodeController(controller)
+  const validator = makeLoadAddressByZipCodeValidation()
+  return makeLoadAddressByZipCodeController(controller, validator)
 }
