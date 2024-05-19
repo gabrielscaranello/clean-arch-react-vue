@@ -10,6 +10,7 @@ declare global {
       'md-icon-button': MDElement
       'md-list': MDElement
       'md-list-item': MDElement
+      'md-linear-progress': MDElement & { indeterminate: boolean }
       'md-outlined-text-field': MDElement & {
         label: string
         placeholder?: string
