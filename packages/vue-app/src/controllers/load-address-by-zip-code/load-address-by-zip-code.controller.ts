@@ -38,8 +38,9 @@ export const makeLoadAddressByZipCodeController: LoadAddressByZipCodeControllerB
 
   const hasErrors = computed(() => triedSubmit.value && !validation.value.isValid)
   const errors = computed(() => (hasErrors.value ? validation.value.errors : {}))
+  const disabledSubmit = computed(() => hasErrors.value || store.isLoading)
 
   watch(form, handleValidation, { deep: true })
 
-  return { store, form, onSubmit, hasErrors, errors }
+  return { form, onSubmit, errors, disabledSubmit }
 }

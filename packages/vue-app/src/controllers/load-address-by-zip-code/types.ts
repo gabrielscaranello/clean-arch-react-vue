@@ -3,7 +3,6 @@ import {
   Validation,
   ValidationErrors
 } from '@core'
-import { useAddressStore } from '@vue-app/store'
 import { ComputedRef } from 'vue'
 
 export interface LoadAddressByZipCodeForm {
@@ -13,8 +12,7 @@ export interface LoadAddressByZipCodeForm {
 export interface LoadAddressByZipCodeController {
   onSubmit: () => Promise<void>
   form: LoadAddressByZipCodeForm
-  store: ReturnType<typeof useAddressStore>
-  hasErrors: ComputedRef<boolean>
+  disabledSubmit: ComputedRef<boolean>
   errors: ComputedRef<ValidationErrors<LoadAddressByZipCodeForm>>
 }
 

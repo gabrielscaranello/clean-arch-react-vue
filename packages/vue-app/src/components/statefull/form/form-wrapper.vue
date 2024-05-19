@@ -2,7 +2,7 @@
   import { Button, Input } from '@vue-app/components/stateless'
   import { useLoadAddressByZipCodeController } from '@vue-app/composition'
 
-  const { form, onSubmit, errors, hasErrors } = useLoadAddressByZipCodeController()
+  const { form, onSubmit, errors, disabledSubmit } = useLoadAddressByZipCodeController()
 </script>
 
 <template>
@@ -13,6 +13,6 @@
       placeholder="Insira o CEP para consultar"
       :error="errors.zipCode"
       v-model="form.zipCode" />
-    <Button class="form__submit" type="submit" :disabled="hasErrors">Consultar</Button>
+    <Button class="form__submit" type="submit" :disabled="disabledSubmit">Consultar</Button>
   </form>
 </template>
