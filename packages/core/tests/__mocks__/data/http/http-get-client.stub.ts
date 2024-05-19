@@ -1,6 +1,5 @@
+import { HTTP_STATUS_CODE, HttpGetClient, HttpResponse } from '@core/data/contracts'
 import { fakerObject } from '@mocks/faker'
-
-import { HTTP_STATUS_CODE, HttpGetClient, HttpResponse } from '@/data/contracts'
 
 export class HttpGetClientStub implements HttpGetClient {
   async get<R = any>(): Promise<HttpResponse<R>> {

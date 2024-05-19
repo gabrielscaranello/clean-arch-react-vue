@@ -1,5 +1,5 @@
 {
-  "extends": "../../tsconfig.json",
+  "extends": "../../tsconfig.base.json",
   "include": ["src", "*.config.*", "*.setup.*", "*.d.ts", ".eslintrc.*"],
   "exclude": ["node_modules", "dist"],
   "compilerOptions": {
@@ -15,7 +15,9 @@
 
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["src/*"],
+      "@core": ["../core/src"]
     }
-  }
+  },
+  "references": [{ "path": "../core/tsconfig.json" }]
 }

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint-env node */
 require('@rushstack/eslint-patch/modern-module-resolution')
-const globalConfig = require('../../.eslintrc.cjs')
+const globalConfig = require('../../eslintrc.base.cjs')
 
 module.exports = {
   root: true,
@@ -17,6 +17,9 @@ module.exports = {
     ecmaVersion: 'latest'
   },
   rules: {
-    ...globalConfig.rules
+    ...globalConfig.rules,
+
+    '@typescript-eslint/no-unsafe-call': 'off',
+    '@typescript-eslint/no-unsafe-member-access': 'off'
   }
 }

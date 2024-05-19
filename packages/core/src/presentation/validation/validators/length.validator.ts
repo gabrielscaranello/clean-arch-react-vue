@@ -1,5 +1,5 @@
-import { Validation, ValidationInput, ValidationResult } from '@/presentation/contracts'
-import { InvalidLengthError } from '@/presentation/errors'
+import { Validation, ValidationInput, ValidationResult } from '@core/presentation/contracts'
+import { InvalidLengthError } from '@core/presentation/errors'
 
 export class LengthValidation implements Validation {
   constructor(

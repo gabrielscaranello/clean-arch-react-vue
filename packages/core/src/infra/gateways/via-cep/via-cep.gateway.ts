@@ -1,5 +1,5 @@
-import { HTTP_STATUS_CODE, HttpGetClient } from '@/data/contracts'
-import { Address, LoadAddressByZipCode, LoadAddressByZipCodeParams } from '@/domain'
+import { HTTP_STATUS_CODE, HttpGetClient } from '@core/data/contracts'
+import { Address, LoadAddressByZipCode, LoadAddressByZipCodeParams } from '@core/domain'
 
 import { ViaCepLoadAddressByZipCodeResult } from './contracts'
 

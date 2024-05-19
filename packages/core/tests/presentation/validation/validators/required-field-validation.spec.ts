@@ -1,7 +1,6 @@
+import { MissingParamError } from '@core/presentation/errors'
+import { RequiredFieldValidation } from '@core/presentation/validation'
 import { faker } from '@mocks/faker'
-
-import { MissingParamError } from '@/presentation/errors'
-import { RequiredFieldValidation } from '@/presentation/validation'
 
 interface SutTypes {
   sut: RequiredFieldValidation

@@ -1,12 +1,11 @@
-import { faker } from '@mocks/faker'
-
-import { validation } from '@/main/helpers'
-import { Validation } from '@/presentation/contracts'
+import { validation } from '@core/main/helpers'
+import { Validation } from '@core/presentation/contracts'
 import {
   LengthValidation,
   RequiredFieldValidation,
   ValidationComposite
-} from '@/presentation/validation'
+} from '@core/presentation/validation'
+import { faker } from '@mocks/faker'
 
 const composite = (...validators: Validation[]): ValidationComposite => {
   return new ValidationComposite(validators)

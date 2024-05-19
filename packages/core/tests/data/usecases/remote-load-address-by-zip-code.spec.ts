@@ -1,8 +1,7 @@
+import { RemoteLoadAddressByZipCode } from '@core/data/usecases'
+import { LoadAddressByZipCode, LoadAddressByZipCodeParams } from '@core/domain'
 import { LoadAddressByZipCodeStub, mockAddress } from '@mocks/domain'
 import { faker } from '@mocks/faker'
-
-import { RemoteLoadAddressByZipCode } from '@/data/usecases'
-import { LoadAddressByZipCode, LoadAddressByZipCodeParams } from '@/domain'
 
 interface SutTypes {
   sut: RemoteLoadAddressByZipCode

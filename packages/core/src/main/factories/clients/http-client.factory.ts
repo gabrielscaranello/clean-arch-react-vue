@@ -1,5 +1,5 @@
-import { HttpClient } from '@/data/contracts'
-import { AxiosHttpClient } from '@/infra'
+import { HttpClient } from '@core/data/contracts'
+import { AxiosHttpClient } from '@core/infra'
 
 export const makeHttpClient = (): HttpClient => {
   return new AxiosHttpClient()

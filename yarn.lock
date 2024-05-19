@@ -241,6 +241,70 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@clean-arch-react-vue/core@workspace:packages/core":
+  version: 0.0.0-use.local
+  resolution: "@clean-arch-react-vue/core@workspace:packages/core"
+  dependencies:
+    "@faker-js/faker": "npm:^8.4.1"
+    "@ianvs/prettier-plugin-sort-imports": "npm:^4.2.1"
+    "@types/node": "npm:20"
+    "@typescript-eslint/eslint-plugin": "npm:^7.6.0"
+    "@typescript-eslint/parser": "npm:^7.6.0"
+    "@vitest/coverage-istanbul": "npm:^1.6.0"
+    axios: "npm:^1.6.8"
+    eslint: "npm:^8.57.0"
+    eslint-config-love: "npm:^47.0.0"
+    eslint-plugin-import: "npm:^2.29.1"
+    eslint-plugin-n: "npm:^15.7.0"
+    eslint-plugin-prettier: "npm:^5.1.3"
+    eslint-plugin-promise: "npm:^6.1.1"
+    prettier: "npm:^3.2.5"
+    typescript: "npm:^5.4.5"
+    vite: "npm:^5.2.11"
+    vitest: "npm:^1.6.0"
+    vitest-mock-extended: "npm:^1.3.1"
+  languageName: unknown
+  linkType: soft
+
+"@clean-arch-react-vue/vue-app@workspace:packages/vue-app":
+  version: 0.0.0-use.local
+  resolution: "@clean-arch-react-vue/vue-app@workspace:packages/vue-app"
+  dependencies:
+    "@faker-js/faker": "npm:^8.4.1"
+    "@ianvs/prettier-plugin-sort-imports": "npm:^4.2.1"
+    "@material/web": "npm:^1.4.1"
+    "@rushstack/eslint-patch": "npm:^1.8.0"
+    "@tsconfig/node20": "npm:^20.1.4"
+    "@types/jsdom": "npm:^21.1.6"
+    "@types/node": "npm:20"
+    "@typescript-eslint/eslint-plugin": "npm:^7.6.0"
+    "@typescript-eslint/parser": "npm:^7.6.0"
+    "@vitejs/plugin-vue": "npm:^5.0.4"
+    "@vitest/coverage-istanbul": "npm:^1.6.0"
+    "@vue/eslint-config-prettier": "npm:^9.0.0"
+    "@vue/eslint-config-typescript": "npm:^13.0.0"
+    "@vue/test-utils": "npm:^2.4.5"
+    "@vue/tsconfig": "npm:^0.5.1"
+    eslint: "npm:^8.57.0"
+    eslint-config-love: "npm:^47.0.0"
+    eslint-plugin-import: "npm:^2.29.1"
+    eslint-plugin-n: "npm:^15.7.0"
+    eslint-plugin-prettier: "npm:^5.1.3"
+    eslint-plugin-promise: "npm:^6.1.1"
+    eslint-plugin-vue: "npm:^9.23.0"
+    jsdom: "npm:^24.0.0"
+    npm-run-all2: "npm:^6.1.2"
+    prettier: "npm:^3.2.5"
+    sass: "npm:^1.77.2"
+    typescript: "npm:^5.4.5"
+    vite: "npm:^5.2.11"
+    vitest: "npm:^1.4.0"
+    vitest-mock-extended: "npm:^1.3.1"
+    vue: "npm:^3.4.21"
+    vue-tsc: "npm:^2.0.11"
+  languageName: unknown
+  linkType: soft
+
 "@esbuild/aix-ppc64@npm:0.20.2":
   version: 0.20.2
   resolution: "@esbuild/aix-ppc64@npm:0.20.2"
@@ -776,7 +840,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rushstack/eslint-patch@npm:^1.8.0":
+"@rushstack/eslint-patch@npm:^1.10.3, @rushstack/eslint-patch@npm:^1.8.0":
   version: 1.10.3
   resolution: "@rushstack/eslint-patch@npm:1.10.3"
   checksum: 10c0/ec75d23fba30fc5f3303109181ce81a686f7b5660b6e06d454cd7b74a635bd68d5b28300ddd6e2a53b6cb10a876246e952e12fa058af32b2fa29b73744f00521
@@ -822,7 +886,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:20, @types/node@npm:^20.12.5":
+"@types/module-alias@npm:^2":
+  version: 2.0.4
+  resolution: "@types/module-alias@npm:2.0.4"
+  checksum: 10c0/73e0993763526093d9e0993923e93a43186fac9b73e6ee6f785a34a79db6130468b2c9d9798c092ae5d50e8a2e6f7ab51a7f638ee7671037c15b5dde15dc5787
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:*, @types/node@npm:20":
   version: 20.12.12
   resolution: "@types/node@npm:20.12.12"
   dependencies:
@@ -1694,25 +1765,13 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "clean-arch-react-vue@workspace:."
   dependencies:
-    "@faker-js/faker": "npm:^8.4.1"
     "@ianvs/prettier-plugin-sort-imports": "npm:^4.2.1"
-    "@types/node": "npm:20"
-    "@typescript-eslint/eslint-plugin": "npm:^7.6.0"
-    "@typescript-eslint/parser": "npm:^7.6.0"
-    "@vitest/coverage-istanbul": "npm:^1.6.0"
-    eslint: "npm:^8.57.0"
-    eslint-config-love: "npm:^47.0.0"
-    eslint-plugin-import: "npm:^2.29.1"
-    eslint-plugin-n: "npm:^15.7.0"
-    eslint-plugin-prettier: "npm:^5.1.3"
-    eslint-plugin-promise: "npm:^6.1.1"
+    "@rushstack/eslint-patch": "npm:^1.10.3"
+    "@types/module-alias": "npm:^2"
     git-commit-msg-linter: "npm:^5.0.7"
     husky: "npm:^9.0.11"
+    module-alias: "npm:^2.2.3"
     prettier: "npm:^3.2.5"
-    typescript: "npm:^5.4.5"
-    vite: "npm:^5.2.11"
-    vitest: "npm:^1.6.0"
-    vitest-mock-extended: "npm:^1.3.1"
   languageName: unknown
   linkType: soft
 
@@ -1818,27 +1877,6 @@ __metadata:
   checksum: 10c0/8f2f7a27a1a011cc6cc88cc4da2d7d0cfa5ee0369508baae3d98c260bb3ac520691464e5bbe4ae7cdf09860c1d69ecc6f70c63c6e7c7f7e3f18ec08484dc7d9b
   languageName: node
   linkType: hard
-
-"core@workspace:packages/core":
-  version: 0.0.0-use.local
-  resolution: "core@workspace:packages/core"
-  dependencies:
-    "@ianvs/prettier-plugin-sort-imports": "npm:^4.2.1"
-    "@typescript-eslint/eslint-plugin": "npm:^7.6.0"
-    "@typescript-eslint/parser": "npm:^7.6.0"
-    "@vitest/coverage-istanbul": "npm:^1.6.0"
-    axios: "npm:^1.6.8"
-    eslint: "npm:^8.57.0"
-    eslint-config-love: "npm:^47.0.0"
-    eslint-plugin-import: "npm:^2.29.1"
-    eslint-plugin-n: "npm:^15.7.0"
-    eslint-plugin-prettier: "npm:^5.1.3"
-    eslint-plugin-promise: "npm:^6.1.1"
-    prettier: "npm:^3.2.5"
-    typescript: "npm:^5.4.5"
-    vitest: "npm:^1.6.0"
-  languageName: unknown
-  linkType: soft
 
 "cross-spawn@npm:^7.0.0, cross-spawn@npm:^7.0.2, cross-spawn@npm:^7.0.3":
   version: 7.0.3
@@ -4048,6 +4086,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"module-alias@npm:^2.2.3":
+  version: 2.2.3
+  resolution: "module-alias@npm:2.2.3"
+  checksum: 10c0/47dc5b6d04f6e7df0ff330ca9b2a37c688a682ed661e9432b0b327e1e6c43eedad052151b8d50d6beea8b924828d2a92fa4625c18d651bf2d93d8f03aa0172fa
+  languageName: node
+  linkType: hard
+
 "ms@npm:2.1.2":
   version: 2.1.2
   resolution: "ms@npm:2.1.2"
@@ -5471,7 +5516,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:^5.0.0, vite@npm:^5.2.11, vite@npm:^5.2.8":
+"vite@npm:^5.0.0, vite@npm:^5.2.11":
   version: 5.2.11
   resolution: "vite@npm:5.2.11"
   dependencies:
@@ -5572,42 +5617,6 @@ __metadata:
   checksum: 10c0/065da5b8ead51eb174d93dac0cd50042ca9539856dc25e340ea905d668c41961f7e00df3e388e6c76125b2c22091db2e8465f993d0f6944daf9598d549e562e7
   languageName: node
   linkType: hard
-
-"vue-app@workspace:packages/vue-app":
-  version: 0.0.0-use.local
-  resolution: "vue-app@workspace:packages/vue-app"
-  dependencies:
-    "@ianvs/prettier-plugin-sort-imports": "npm:^4.2.1"
-    "@material/web": "npm:^1.4.1"
-    "@rushstack/eslint-patch": "npm:^1.8.0"
-    "@tsconfig/node20": "npm:^20.1.4"
-    "@types/jsdom": "npm:^21.1.6"
-    "@types/node": "npm:^20.12.5"
-    "@typescript-eslint/eslint-plugin": "npm:^7.6.0"
-    "@typescript-eslint/parser": "npm:^7.6.0"
-    "@vitejs/plugin-vue": "npm:^5.0.4"
-    "@vue/eslint-config-prettier": "npm:^9.0.0"
-    "@vue/eslint-config-typescript": "npm:^13.0.0"
-    "@vue/test-utils": "npm:^2.4.5"
-    "@vue/tsconfig": "npm:^0.5.1"
-    eslint: "npm:^8.57.0"
-    eslint-config-love: "npm:^47.0.0"
-    eslint-plugin-import: "npm:^2.29.1"
-    eslint-plugin-n: "npm:^15.7.0"
-    eslint-plugin-prettier: "npm:^5.1.3"
-    eslint-plugin-promise: "npm:^6.1.1"
-    eslint-plugin-vue: "npm:^9.23.0"
-    jsdom: "npm:^24.0.0"
-    npm-run-all2: "npm:^6.1.2"
-    prettier: "npm:^3.2.5"
-    sass: "npm:^1.77.2"
-    typescript: "npm:^5.4.5"
-    vite: "npm:^5.2.8"
-    vitest: "npm:^1.4.0"
-    vue: "npm:^3.4.21"
-    vue-tsc: "npm:^2.0.11"
-  languageName: unknown
-  linkType: soft
 
 "vue-component-type-helpers@npm:^2.0.0":
   version: 2.0.19

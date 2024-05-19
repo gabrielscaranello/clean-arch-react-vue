@@ -1,8 +1,7 @@
+import { HTTP_METHOD } from '@core/data/contracts'
+import { AxiosHttpClient } from '@core/infra'
 import { mockHttpResponse } from '@mocks/data'
 import { mockAxios, mockHttpRequest } from '@mocks/infra'
-
-import { HTTP_METHOD } from '@/data/contracts'
-import { AxiosHttpClient } from '@/infra'
 
 vi.mock('axios')
 

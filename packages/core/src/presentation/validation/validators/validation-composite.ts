@@ -3,7 +3,7 @@ import {
   ValidationErrors,
   ValidationInput,
   ValidationResult
-} from '@/presentation/contracts'
+} from '@core/presentation/contracts'
 
 export class ValidationComposite implements Validation {
   constructor(private readonly validations: Validation[]) {}

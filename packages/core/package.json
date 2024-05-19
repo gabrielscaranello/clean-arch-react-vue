@@ -1,17 +1,12 @@
 {
-  "name": "core",
+  "name": "@clean-arch-react-vue/core",
   "version": "0.0.0",
   "description": "Core of application",
   "author": "Gabriel Scaranello <gabrieljscaranello@gmail.com>",
   "license": "MIT",
   "type": "module",
-  "directories": {
-    "lib": "src",
-    "test": "__tests__"
-  },
-  "files": [
-    "src"
-  ],
+  "main": "src/index.ts",
+  "types": "src/index.ts",
   "scripts": {
     "format": "prettier --write \"**/*.{ts,mts,md,json}\" --ignore-path .gitignore",
     "lint": "eslint --ext .ts,.mts --ignore-path .gitignore .",
@@ -24,7 +19,9 @@
     "axios": "^1.6.8"
   },
   "devDependencies": {
+    "@faker-js/faker": "^8.4.1",
     "@ianvs/prettier-plugin-sort-imports": "^4.2.1",
+    "@types/node": "20",
     "@typescript-eslint/eslint-plugin": "^7.6.0",
     "@typescript-eslint/parser": "^7.6.0",
     "@vitest/coverage-istanbul": "^1.6.0",
@@ -36,6 +33,8 @@
     "eslint-plugin-promise": "^6.1.1",
     "prettier": "^3.2.5",
     "typescript": "^5.4.5",
-    "vitest": "^1.6.0"
+    "vite": "^5.2.11",
+    "vitest": "^1.6.0",
+    "vitest-mock-extended": "^1.3.1"
   }
 }

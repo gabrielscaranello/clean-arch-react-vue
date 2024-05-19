@@ -1,10 +1,9 @@
+import { HTTP_STATUS_CODE, HttpGetClient } from '@core/data/contracts'
+import { LoadAddressByZipCodeParams } from '@core/domain'
+import { ViaCepGateway } from '@core/infra/gateways'
 import { HttpGetClientStub } from '@mocks/data'
 import { faker } from '@mocks/faker'
 import { mockViaCepLoadAddressByZipCodeResult } from '@mocks/infra'
-
-import { HTTP_STATUS_CODE, HttpGetClient } from '@/data/contracts'
-import { LoadAddressByZipCodeParams } from '@/domain'
-import { ViaCepGateway } from '@/infra/gateways'
 
 interface SutTypes {
   sut: ViaCepGateway

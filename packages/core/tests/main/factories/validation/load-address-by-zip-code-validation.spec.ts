@@ -1,7 +1,7 @@
-import { makeLoadAddressByZipCodeValidation } from '@/main/factories'
-import { validation, ValidationSchema } from '@/main/helpers'
+import { makeLoadAddressByZipCodeValidation } from '@core/main/factories'
+import { validation, ValidationSchema } from '@core/main/helpers'
 
-vi.mock('@/main/helpers/validation')
+vi.mock('@core/main/helpers/validation')
 
 describe('main/factories/validation/load-address-by-zip-code-validation', () => {
   it('should include all validations', () => {

@@ -1,4 +1,4 @@
-import { Address, LoadAddressByZipCode, LoadAddressByZipCodeParams } from '@/domain'
+import { Address, LoadAddressByZipCode, LoadAddressByZipCodeParams } from '@core/domain'
 
 export class RemoteLoadAddressByZipCode implements LoadAddressByZipCode {
   constructor(private readonly gateway: LoadAddressByZipCode) {}

@@ -6,7 +6,8 @@ export default defineConfig({
   plugins: [Vue()],
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
+      '@core': fileURLToPath(new URL('../core/src', import.meta.url))
     }
   },
   server: {

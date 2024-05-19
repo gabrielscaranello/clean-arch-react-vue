@@ -1,5 +1,5 @@
-import { Address, LoadAddressByZipCode } from '@/domain'
-import { Controller, Validation } from '@/presentation/contracts'
+import { Address, LoadAddressByZipCode } from '@core/domain'
+import { Controller, Validation } from '@core/presentation/contracts'
 
 import { RemoteLoadAddressByZipCodeControllerParams } from './contracts'
 

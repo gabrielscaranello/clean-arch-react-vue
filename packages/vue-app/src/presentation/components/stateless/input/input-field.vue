@@ -1,8 +1,6 @@
 <script setup lang="ts">
   import '@material/web/textfield/outlined-text-field'
 
-  import { computed } from 'vue'
-
   const props = defineProps<{
     label: string
     modelValue: string
@@ -11,14 +9,18 @@
 
   const emit = defineEmits<(e: 'update:modelValue', value: string) => void>()
 
-  const value = computed({
-    get: () => props.modelValue,
-    set: (value) => {
-      emit('update:modelValue', value)
-    }
-  })
+  const onInput = (v: InputEvent): void => {
+    const target = v.target as HTMLInputElement | null
+    if (!target) return
+    const value = target.value
+    emit('update:modelValue', value)
+  }
 </script>
 
 <template>
-  <md-outlined-text-field :label="props.label" :placeholder="props.placeholder" v-model="value" />
+  <md-outlined-text-field
+    :label="props.label"
+    :placeholder="props.placeholder"
+    :value="props.modelValue"
+    @input="onInput" />
 </template>

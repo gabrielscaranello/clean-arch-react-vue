@@ -1,10 +1,14 @@
 <script setup lang="ts">
+  import { makeRemoteLoadAddressByZipCodeController } from '@core'
   import { reactive } from 'vue'
 
   import { Button, Input } from '@/presentation/components/stateless'
 
+  const useCase = makeRemoteLoadAddressByZipCodeController()
+
   const form = reactive({ zipCode: '' })
   const onSubmit = async (): Promise<void> => {
+    await useCase.handle({ zipCode: form.zipCode })
     await Promise.reject(new Error('Not implemented'))
   }
 </script>
