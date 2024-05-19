@@ -16,6 +16,7 @@ export const makeLoadAddressByZipCodeController: LoadAddressByZipCodeControllerB
       const result = await controller.handle(form)
       store.setAddress(result)
     } catch (error) {
+      store.setAddress()
       console.error(error)
     } finally {
       store.setIsLoading(false)

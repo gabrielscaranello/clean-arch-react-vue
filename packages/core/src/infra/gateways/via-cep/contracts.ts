@@ -5,4 +5,5 @@ export interface ViaCepLoadAddressByZipCodeResult {
   localidade: string
   logradouro: string
   uf: string
+  erro?: boolean
 }

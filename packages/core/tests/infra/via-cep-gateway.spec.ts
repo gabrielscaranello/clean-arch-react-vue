@@ -58,6 +58,18 @@ describe('infra/via-cep-gateway', () => {
       await expect(promise).rejects.toThrow()
     })
 
+    it('should throw error if client return error true on body', async () => {
+      const { sut, httpClient } = makeSut()
+      vi.spyOn(httpClient, 'get').mockResolvedValueOnce({
+        statusCode: HTTP_STATUS_CODE.OK,
+        body: { erro: true }
+      })
+
+      const promise = sut.load(params)
+
+      await expect(promise).rejects.toThrow()
+    })
+
     it('should return address on success', async () => {
       const mockedResult = mockViaCepLoadAddressByZipCodeResult()
       const { sut, httpClient } = makeSut()

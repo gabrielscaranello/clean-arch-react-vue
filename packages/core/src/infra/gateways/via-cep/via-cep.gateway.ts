@@ -22,6 +22,8 @@ export class ViaCepGateway implements LoadAddressByZipCode {
 
     if (statusCode !== HTTP_STATUS_CODE.OK || !body) throw new Error()
 
+    if (body.erro) throw new Error()
+
     return {
       city: body.localidade,
       complement: body.complemento,
