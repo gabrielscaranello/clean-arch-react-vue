@@ -1,10 +1,12 @@
-import * as React from 'react'
+import { DetailedHTMLProps, HTMLAttributes } from 'react'
+
+type MDElement = DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>
 
 declare global {
   namespace JSX {
     interface IntrinsicElements {
-      'md-text-button': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>
-      'md-icon': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>
+      'md-text-button': MDElement
+      'md-icon': MDElement
     }
   }
 }
