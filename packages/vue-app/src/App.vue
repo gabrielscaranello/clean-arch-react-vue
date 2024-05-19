@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import { Form } from '@/components/statefull'
+  import { Form } from '@vue-app/components/statefull'
 </script>
 
 <template>
