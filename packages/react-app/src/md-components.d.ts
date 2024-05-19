@@ -8,6 +8,8 @@ declare global {
       'md-text-button': MDElement
       'md-icon': MDElement
       'md-icon-button': MDElement
+      'md-list': MDElement
+      'md-list-item': MDElement
       'md-outlined-text-field': MDElement & {
         label: string
         placeholder?: string
