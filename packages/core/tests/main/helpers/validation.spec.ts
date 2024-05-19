@@ -1,10 +1,10 @@
 import { validation } from '@core/main/helpers'
-import { Validation } from '@core/presentation/contracts'
 import {
   LengthValidation,
   RequiredFieldValidation,
+  Validation,
   ValidationComposite
-} from '@core/presentation/validation'
+} from '@core/presentation'
 import { faker } from '@mocks/faker'
 
 const composite = (...validators: Validation[]): ValidationComposite => {

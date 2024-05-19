@@ -1,9 +1,4 @@
-import {
-  Validation,
-  ValidationErrors,
-  ValidationInput,
-  ValidationResult
-} from '@core/presentation/contracts'
+import { Validation, ValidationErrors, ValidationInput, ValidationResult } from '@core/presentation'
 
 export class ValidationComposite implements Validation {
   constructor(private readonly validations: Validation[]) {}

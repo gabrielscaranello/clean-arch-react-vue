@@ -1,5 +1,4 @@
-import { Validation } from '@core/presentation/contracts'
-import { ValidationComposite } from '@core/presentation/validation'
+import { Validation, ValidationComposite } from '@core/presentation'
 import { faker, fakerUnique } from '@mocks/faker'
 import { ValidationStub } from '@mocks/presentation'
 

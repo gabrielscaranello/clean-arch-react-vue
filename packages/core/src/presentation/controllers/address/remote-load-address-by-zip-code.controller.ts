@@ -1,16 +1,17 @@
 import { Address, LoadAddressByZipCode } from '@core/domain'
-import { Controller, Validation } from '@core/presentation/contracts'
+import {
+  LoadAddressByZipCodeController,
+  LoadAddressByZipCodeControllerParams,
+  Validation
+} from '@core/presentation'
 
-import { RemoteLoadAddressByZipCodeControllerParams } from './contracts'
-
-export class RemoteLoadAddressByZipCodeController
-  implements Controller<RemoteLoadAddressByZipCodeControllerParams, Address> {
+export class RemoteLoadAddressByZipCodeController implements LoadAddressByZipCodeController {
   constructor(
     private readonly gateway: LoadAddressByZipCode,
     private readonly validator: Validation
   ) {}
 
-  async handle(params: RemoteLoadAddressByZipCodeControllerParams): Promise<Address> {
+  async handle(params: LoadAddressByZipCodeControllerParams): Promise<Address> {
     const validation = this.validator.validate(params)
     if (!validation.isValid) throw new Error()
 

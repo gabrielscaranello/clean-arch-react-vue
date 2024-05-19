@@ -1,9 +1,9 @@
 import { LoadAddressByZipCode } from '@core/domain'
-import { Validation } from '@core/presentation/contracts'
 import {
+  LoadAddressByZipCodeControllerParams,
   RemoteLoadAddressByZipCodeController,
-  RemoteLoadAddressByZipCodeControllerParams
-} from '@core/presentation/controllers'
+  Validation
+} from '@core/presentation'
 import { LoadAddressByZipCodeStub } from '@mocks/domain'
 import { faker } from '@mocks/faker'
 import { ValidationStub } from '@mocks/presentation'
@@ -22,7 +22,7 @@ const makeSut = (): SutTypes => {
 }
 
 describe('presentation/controllers/load-address-by-zip-code', () => {
-  const params: RemoteLoadAddressByZipCodeControllerParams = { zipCode: faker.location.zipCode() }
+  const params: LoadAddressByZipCodeControllerParams = { zipCode: faker.location.zipCode() }
 
   it('should call validation with correct value', async () => {
     const { sut, validationStub } = makeSut()

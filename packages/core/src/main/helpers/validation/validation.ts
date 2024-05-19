@@ -1,9 +1,9 @@
-import { Validation } from '@core/presentation/contracts'
 import {
   LengthValidation,
   RequiredFieldValidation,
+  Validation,
   ValidationComposite
-} from '@core/presentation/validation'
+} from '@core/presentation'
 
 import { ValidationSchema } from './contracts'
 

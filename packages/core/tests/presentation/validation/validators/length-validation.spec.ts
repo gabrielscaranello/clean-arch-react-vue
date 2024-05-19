@@ -1,5 +1,4 @@
-import { InvalidLengthError } from '@core/presentation/errors'
-import { LengthValidation } from '@core/presentation/validation'
+import { InvalidLengthError, LengthValidation } from '@core/presentation'
 import { faker, fakerUnique } from '@mocks/faker'
 
 interface SutTypes {
