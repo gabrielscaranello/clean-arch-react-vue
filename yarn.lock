@@ -1799,6 +1799,7 @@ __metadata:
     husky: "npm:^9.0.11"
     module-alias: "npm:^2.2.3"
     prettier: "npm:^3.2.5"
+    vite: "npm:^5.2.11"
   languageName: unknown
   linkType: soft
 
