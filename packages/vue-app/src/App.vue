@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import { Form } from '@/presentation/components/statefull'
+  import { Form } from '@/components/statefull'
 </script>
 
 <template>

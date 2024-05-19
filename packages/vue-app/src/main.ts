@@ -1,8 +1,8 @@
 import { createApp } from 'vue'
 
-import App from '@/presentation/App.vue'
+import App from './App.vue'
 
-import '@/scss/app.scss'
+import './scss/app.scss'
 
 const app = createApp(App)
 

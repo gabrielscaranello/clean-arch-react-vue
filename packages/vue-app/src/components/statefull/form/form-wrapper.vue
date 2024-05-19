@@ -1,6 +1,6 @@
 <script setup lang="ts">
-  import { Button, Input } from '@/presentation/components/stateless'
-  import { useLoadAddressByZipCodeController } from '@/presentation/factories'
+  import { Button, Input } from '@/components/stateless'
+  import { useLoadAddressByZipCodeController } from '@/composition'
 
   const { state, onSubmit } = useLoadAddressByZipCodeController()
 </script>
