@@ -1,5 +1,7 @@
 <script setup lang="ts">
   import '@material/web/textfield/outlined-text-field'
+  import '@material/web/iconbutton/icon-button'
+  import '@material/web/icon/icon'
 
   const props = defineProps<{
     label: string
@@ -15,6 +17,10 @@
     const value = target.value
     emit('update:modelValue', value)
   }
+
+  const onClear = (): void => {
+    emit('update:modelValue', '')
+  }
 </script>
 
 <template>
@@ -22,5 +28,9 @@
     :label="props.label"
     :placeholder="props.placeholder"
     :value="props.modelValue"
-    @input="onInput" />
+    @input="onInput">
+    <md-icon-button @click="onClear" v-if="props.modelValue" slot="trailing-icon">
+      <md-icon>close</md-icon>
+    </md-icon-button>
+  </md-outlined-text-field>
 </template>

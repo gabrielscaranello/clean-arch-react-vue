@@ -7,7 +7,12 @@ export default defineConfig({
   plugins: [
     Vue(),
     Fonts({
-      google: { families: [{ name: 'Poppins', styles: 'wght@100;300;400;500;700;900' }] }
+      google: {
+        families: [
+          { name: 'Poppins', styles: 'wght@100;300;400;500;700;900' },
+          { name: 'Material Symbols Outlined', styles: 'wght@100;300;400;500;700;900' }
+        ]
+      }
     })
   ],
   resolve: {
