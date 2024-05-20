@@ -310,7 +310,6 @@ __metadata:
   dependencies:
     "@emotion/react": "npm:^11.11.4"
     "@emotion/styled": "npm:^11.11.5"
-    "@material/web": "npm:^1.4.1"
     "@mui/material": "npm:^5.15.18"
     "@types/react": "npm:^18.2.66"
     "@types/react-dom": "npm:^18.2.22"
