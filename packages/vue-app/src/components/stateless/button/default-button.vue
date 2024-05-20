@@ -1,9 +1,7 @@
-<script setup lang="ts">
-  import '@material/web/button/text-button'
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <md-text-button>
+  <v-btn variant="text" color="primary">
     <slot></slot>
-  </md-text-button>
+  </v-btn>
 </template>

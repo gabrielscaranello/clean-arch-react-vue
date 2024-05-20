@@ -8,10 +8,7 @@ export default defineConfig({
     react(),
     Fonts({
       google: {
-        families: [
-          { name: 'Poppins', styles: 'wght@100;300;400;500;700;900' },
-          { name: 'Material Symbols Outlined', styles: 'wght@100;300;400;500;700;900' }
-        ]
+        families: [{ name: 'Roboto', styles: 'wght@100;300;400;500;700;900' }]
       }
     })
   ],

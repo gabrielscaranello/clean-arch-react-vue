@@ -1,29 +1,4 @@
 .callout {
-  display: grid;
-  grid-auto-flow: column;
-  grid-template-columns: 1.5rem auto;
-  grid-auto-rows: max-content;
-  align-items: center;
-  gap: 1rem;
-  width: auto;
-  border: 2px solid var(--md-sys-color-outline-variant);
-  border-radius: 0.5rem;
-  padding: 1rem;
-
-  &__content {
-    display: grid;
-    gap: 0.25rem;
-  }
-
-  &__title {
-    font-size: 0.85rem;
-    font-weight: 500;
-  }
-
-  &__text {
-    font-size: 0.75rem;
-  }
-
   &__type-info {
     color: var(--md-sys-color-surface-tint);
     border-color: var(--md-sys-color-surface-tint);

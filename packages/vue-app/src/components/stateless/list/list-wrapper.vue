@@ -1,9 +1,9 @@
-<script setup lang="ts">
-  import '@material/web/list/list'
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <md-list class="result__list">
-    <slot />
-  </md-list>
+  <v-list lines="two" class="result__list">
+    <template #default>
+      <slot />
+    </template>
+  </v-list>
 </template>

@@ -1,17 +1,18 @@
 import { fileURLToPath, URL } from 'node:url'
 import Vue from '@vitejs/plugin-vue'
 import Fonts from 'unplugin-fonts/vite'
+import UnpluginComponents from 'unplugin-vue-components/vite'
 import { defineConfig } from 'vite'
+import Vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
 
 export default defineConfig({
   plugins: [
-    Vue({ template: { compilerOptions: { isCustomElement: (tag) => tag.startsWith('md-') } } }),
+    Vue({ template: { transformAssetUrls } }),
+    UnpluginComponents(),
+    Vuetify({ autoImport: false, styles: 'sass' }),
     Fonts({
       google: {
-        families: [
-          { name: 'Poppins', styles: 'wght@100;300;400;500;700;900' },
-          { name: 'Material Symbols Outlined', styles: 'wght@100;300;400;500;700;900' }
-        ]
+        families: [{ name: 'Roboto', styles: 'wght@100;300;400;500;700;900' }]
       }
     })
   ],

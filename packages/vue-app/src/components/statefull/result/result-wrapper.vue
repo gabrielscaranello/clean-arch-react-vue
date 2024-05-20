@@ -17,7 +17,7 @@
         <ListItem title="Bairro" :content="store.address?.neighborhood || '-'" />
         <ListItem title="Complemento" :content="store.address?.complement || '-'" />
       </List>
-      <Callout title="Faça uma busca para ver o resultado." type="info" v-else />
+      <Callout content="Faça uma busca para ver o resultado." type="info" v-else />
     </template>
     <template v-else>
       <Callout

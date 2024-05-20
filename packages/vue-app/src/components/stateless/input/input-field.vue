@@ -1,7 +1,5 @@
 <script setup lang="ts">
-  import '@material/web/textfield/outlined-text-field'
-  import '@material/web/iconbutton/icon-button'
-  import '@material/web/icon/icon'
+  import { computed } from 'vue'
 
   const props = defineProps<{
     label: string
@@ -12,28 +10,23 @@
 
   const emit = defineEmits<(e: 'update:modelValue', value: string) => void>()
 
-  const onInput = (v: InputEvent): void => {
-    const target = v.target as HTMLInputElement | null
-    if (!target) return
-    const value = target.value
-    emit('update:modelValue', value)
-  }
+  const value = computed({
+    get: () => props.modelValue,
+    set: (val) => {
+      emit('update:modelValue', val)
+    }
+  })
 
-  const onClear = (): void => {
-    emit('update:modelValue', '')
-  }
+  const erroMessages = computed(() => (props.error ? [props.error] : []))
 </script>
 
 <template>
-  <md-outlined-text-field
+  <v-text-field
     :label="props.label"
     :placeholder="props.placeholder"
-    :value="props.modelValue"
-    :error="!!props.error"
-    :error-text="props.error"
-    @input="onInput">
-    <md-icon-button @click.prevent="onClear" v-if="props.modelValue" slot="trailing-icon">
-      <md-icon>close</md-icon>
-    </md-icon-button>
-  </md-outlined-text-field>
+    :error-messages="erroMessages"
+    v-model="value"
+    clearable
+    color="primary"
+    variant="outlined" />
 </template>
