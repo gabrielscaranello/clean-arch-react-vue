@@ -1,11 +1,10 @@
-import '@material/web/list/list'
-
+import { List as MdList } from '@mui/material'
 import { FC, PropsWithChildren } from 'react'
 
 export const List: FC<PropsWithChildren> = ({ children }) => {
   return (
-    <md-list className='result__list'>
+    <MdList className='result__list'>
       <>{children}</>
-    </md-list>
+    </MdList>
   )
 }

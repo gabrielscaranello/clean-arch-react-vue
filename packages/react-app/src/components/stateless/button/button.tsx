@@ -1,25 +1,12 @@
-import '@material/web/button/text-button'
-
-import { FC, PropsWithChildren, useMemo } from 'react'
+import { Button as MdButton } from '@mui/material'
+import { FC, PropsWithChildren } from 'react'
 
 import { ButtonProps } from './types'
 
-export const Button: FC<PropsWithChildren<ButtonProps>> = ({
-  children,
-  className,
-  disabled,
-  ...props
-}) => {
-  const compiledProps = useMemo(() => {
-    const localProps: Record<string, unknown> = {}
-    if (disabled) localProps.disabled = disabled
-    if (className) localProps.class = className
-    return localProps
-  }, [disabled, className])
-
+export const Button: FC<PropsWithChildren<ButtonProps>> = ({ children, ...props }) => {
   return (
-    <md-text-button {...props} {...compiledProps}>
+    <MdButton variant='text' {...props}>
       {children}
-    </md-text-button>
+    </MdButton>
   )
 }
