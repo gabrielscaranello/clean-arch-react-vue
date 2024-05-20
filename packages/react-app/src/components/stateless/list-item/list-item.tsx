@@ -6,7 +6,12 @@ import { ListItemProps } from './types'
 export const ListItem: FC<ListItemProps> = ({ title, content }) => {
   return (
     <MdListItem>
-      <ListItemText primary={title} secondary={content} />
+      <ListItemText
+        primaryTypographyProps={{ variant: 'subtitle1', style: { fontWeight: 'bold' } }}
+        primary={title}
+        secondaryTypographyProps={{ variant: 'body2' }}
+        secondary={content}
+      />
     </MdListItem>
   )
 }

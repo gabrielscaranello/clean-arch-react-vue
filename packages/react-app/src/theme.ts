@@ -25,7 +25,8 @@ export const theme = createTheme({
       main: blue
     },
     text: {
-      primary: text
+      primary: text,
+      secondary: text
     }
   }
 })
