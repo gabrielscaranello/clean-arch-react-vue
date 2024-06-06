@@ -1,57 +1,9 @@
-$base: #1e1e2e;
-$blue: #89b4fa;
-$green: #a6e3a1;
-$red: #f38ba8;
-$pink: #f5c2e7;
-$text: #cdd6f4;
-$subtext1: #bac2de;
-$surface1: #45475a;
-$overlay1: #7f849c;
-$overlay2: #9399b2;
+$base: 30, 30, 46;
+$blue: 137, 180, 250;
+$text: 205, 214, 244;
 
 :root {
-  --md-sys-color-primary: #{$blue};
-  --md-sys-color-on-primary: #{$base};
-  --md-sys-color-primary-container: #{$base};
-  --md-sys-color-on-primary-container: #{$blue};
-
-  --md-sys-color-secondary: #{$green};
-  --md-sys-color-on-secondary: #{$base};
-  --md-sys-color-secondary-container: #{$base};
-  --md-sys-color-on-secondary-container: #{$green};
-
-  --md-sys-color-tertiary: #{$pink};
-  --md-sys-color-on-tertiary: #{$base};
-  --md-sys-color-tertiary-container: #{$base};
-  --md-sys-color-on-tertiary-container: #{$pink};
-
-  --md-sys-color-error: #{$red};
-  --md-sys-color-on-error: #{$base};
-  --md-sys-color-error-container: #{$base};
-  --md-sys-color-on-error-container: #{$red};
-
-  --md-sys-color-background: #{$base};
-  --md-sys-color-on-background: #{$text};
-
-  --md-sys-color-surface: #{$base};
-  --md-sys-color-on-surface: #{$text};
-
-  --md-sys-color-surface-variant: #{$surface1};
-  --md-sys-color-on-surface-variant: #{$subtext1};
-
-  --md-sys-color-outline: #{$overlay1};
-
-  --md-sys-color-inverse-on-surface: #{$base};
-  --md-sys-color-inverse-surface: #{$text};
-  --md-sys-color-inverse-primary: #{$blue};
-
-  --md-sys-color-shadow: rgba(0, 0, 0, 0.2);
-
-  --md-sys-color-surface-tint: #{$blue};
-  --md-sys-color-outline-variant: #{$overlay2};
-  --md-sys-color-scrim: rgba(0, 0, 0, 0.5);
-
-  --md-linear-progress-track-height: 3px;
-  --md-linear-progress-track-shape: 3px;
-  --md-linear-progress-active-indicator-height: 3px;
+  --v-theme-on-background: #{$text};
+  --v-theme-background: #{$base};
+  --v-theme-primary: #{$blue};
 }

@@ -17,18 +17,22 @@ export const useVuetify = (app: App): void => {
         dark: {
           dark: true,
           colors: {
-            primary: '#89b4fa',
-            secondary: '#a6e3a1',
-            error: '#f38ba8',
-            info: '#89b4fa',
-            success: '#a6e3a1',
-            'on-background': '#cdd6f4',
             background: '#1e1e2e',
-            'on-info': '#1e1e2e',
-            'on-error': '#1e1e2e',
-            'on-surface': '#1e1e2e',
-            'on-secondary': '#1e1e2e',
-            'on-primary': '#1e1e2e'
+            primary: '#89b4fa',
+            secondary: '#cba6f7',
+            success: '#a6e3a1',
+            warning: '#fab387',
+            error: '#f38ba8',
+            info: '#74c7ec',
+            surface: '#181825',
+            'on-info': '#fefefe',
+            'on-error': '#fefefe',
+            'on-primary': '#fefefe',
+            'on-success': '#fefefe',
+            'on-surface': '#cdd6f4',
+            'on-warning': '#fefefe',
+            'on-secondary': '#fefefe',
+            'on-background': '#cdd6f4'
           }
         }
       }
