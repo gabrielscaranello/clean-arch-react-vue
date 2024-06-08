@@ -1,5 +1,5 @@
 import { Button, Input } from '@react-app/components/stateless'
-import { useLoadAddressByZipCodeController } from '@react-app/composition'
+import { useLoadAddressByZipCodeController } from '@react-app/controllers'
 import { FC } from 'react'
 
 export const Form: FC = () => {

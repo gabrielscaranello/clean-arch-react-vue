@@ -1,15 +1,12 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-import { ValidationResult } from '@core'
+import { makeLoadAddressByZipCode, ValidationResult } from '@core'
 import { useAddressStore } from '@react-app/store'
 import { FormEventHandler, useEffect, useMemo, useState } from 'react'
 
-import { LoadAddressByZipCodeControllerBuilder, LoadAddressByZipCodeForm } from './types'
+import { LoadAddressByZipCodeController, LoadAddressByZipCodeForm } from './types'
 
-export const useLoadAddressByZipCodeControllerBuilder: LoadAddressByZipCodeControllerBuilder = (
-  controller,
-  validator
-) => {
+export const useLoadAddressByZipCodeController = (): LoadAddressByZipCodeController => {
   const store = useAddressStore()
+  const { usecase, validator } = useMemo(() => makeLoadAddressByZipCode(), [])
   const [zipCode, setZipCode] = useState<string>('')
   const [triedToSubmit, setTriedToSubmit] = useState<boolean>(false)
   const [validation, setValidation] = useState<ValidationResult<LoadAddressByZipCodeForm>>({
@@ -31,7 +28,7 @@ export const useLoadAddressByZipCodeControllerBuilder: LoadAddressByZipCodeContr
     store.setIsLoading(true)
 
     try {
-      const result = await controller.handle({ zipCode })
+      const result = await usecase.load({ zipCode })
       store.setAddress(result)
     } catch (error) {
       store.setAddress()
@@ -50,7 +47,7 @@ export const useLoadAddressByZipCodeControllerBuilder: LoadAddressByZipCodeContr
   const errors = useMemo(() => (hasErrors ? validation.errors : {}), [hasErrors, validation])
   const disabledSubmit = useMemo(() => hasErrors || store.isLoading, [hasErrors, store.isLoading])
 
-  useEffect(handleValidation, [zipCode])
+  useEffect(handleValidation, [zipCode, validator])
 
-  return { onSubmit, setZipCode, errors, disabledSubmit, handleSubmit, zipCode }
+  return { setZipCode, errors, disabledSubmit, handleSubmit, zipCode }
 }

@@ -1,13 +1,11 @@
-import { ValidationResult } from '@core'
+import { makeLoadAddressByZipCode, ValidationResult } from '@core'
 import { useAddressStore } from '@vue-app/store'
 import { computed, reactive, ref, watch } from 'vue'
 
-import { LoadAddressByZipCodeControllerBuilder, LoadAddressByZipCodeForm } from './types'
+import { LoadAddressByZipCodeController, LoadAddressByZipCodeForm } from './types'
 
-export const makeLoadAddressByZipCodeController: LoadAddressByZipCodeControllerBuilder = (
-  controller,
-  validator
-) => {
+export const useLoadAddressByZipCodeController = (): LoadAddressByZipCodeController => {
+  const { validator, usecase } = makeLoadAddressByZipCode()
   const store = useAddressStore()
   const form = reactive<LoadAddressByZipCodeForm>({ zipCode: '' })
   const triedSubmit = ref(false)
@@ -27,7 +25,7 @@ export const makeLoadAddressByZipCodeController: LoadAddressByZipCodeControllerB
     store.setIsLoading(true)
 
     try {
-      const result = await controller.handle(form)
+      const result = await usecase.load(form)
       store.setAddress(result)
     } catch (error) {
       store.setAddress()

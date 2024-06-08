@@ -1,8 +1,4 @@
-import {
-  LoadAddressByZipCodeController as CoreLoadAddressByZipCodeController,
-  Validation,
-  ValidationErrors
-} from '@core'
+import { ValidationErrors } from '@core'
 import { Dispatch, FormEventHandler, SetStateAction } from 'react'
 
 export interface LoadAddressByZipCodeForm {
@@ -16,7 +12,3 @@ export interface LoadAddressByZipCodeController {
   errors: ValidationErrors<LoadAddressByZipCodeForm>
   handleSubmit: FormEventHandler<HTMLFormElement>
 }
-export type LoadAddressByZipCodeControllerBuilder = (
-  controller: CoreLoadAddressByZipCodeController,
-  validator: Validation
-) => LoadAddressByZipCodeController

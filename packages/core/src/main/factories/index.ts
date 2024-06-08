@@ -1,5 +1,5 @@
 export * from './clients'
-export * from './controllers'
 export * from './gateways'
+export * from './modules'
 export * from './usecases'
 export * from './validation'

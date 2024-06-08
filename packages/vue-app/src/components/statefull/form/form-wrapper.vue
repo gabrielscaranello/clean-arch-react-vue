@@ -1,6 +1,6 @@
 <script setup lang="ts">
   import { Button, Input } from '@vue-app/components/stateless'
-  import { useLoadAddressByZipCodeController } from '@vue-app/composition'
+  import { useLoadAddressByZipCodeController } from '@vue-app/controllers'
 
   const { form, onSubmit, errors, disabledSubmit } = useLoadAddressByZipCodeController()
 </script>
