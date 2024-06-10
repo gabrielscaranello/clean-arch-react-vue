@@ -50,7 +50,7 @@ yarn dev:react
 yarn dev:vue
 ```
 
-> ![NOTE]  
+> [!NOTE]  
 > React project run in [http://localhost:8081](http://localhost:8081)  
 > Vue project run in [http://localhost:8080](http://localhost:8080)
 

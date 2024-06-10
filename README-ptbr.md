@@ -50,7 +50,7 @@ yarn dev:react
 yarn dev:vue
 ```
 
-> ![NOTE]  
+> [!NOTE]  
 > O projeto React incia em [http://localhost:8081](http://localhost:8081)  
 > e o projeto Vue inicia em [http://localhost:8080](http://localhost:8080)
 
