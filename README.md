@@ -42,8 +42,17 @@ yarn install
 
 4. Run the project:
 
-> [!WARNING]  
-> Still in development.
+```bash
+# Run React Project
+yarn dev:react
+
+# Run Vue Project
+yarn dev:vue
+```
+
+> ![NOTE]  
+> React project run in [http://localhost:8081](http://localhost:8081)  
+> Vue project run in [http://localhost:8080](http://localhost:8080)
 
 5. Running the build for production:
 
