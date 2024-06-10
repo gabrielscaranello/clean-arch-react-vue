@@ -56,8 +56,13 @@ yarn dev:vue
 
 5. Running the build for production:
 
-> [!WARNING]  
-> Still in development.
+```bash
+# Build React Project - output: packages/react-app/dist
+yarn build:react
+
+# Build Vue Project - output: packages/vue-app/dist
+yarn build:vue
+```
 
 ## 🧪 Unit Tests
 
